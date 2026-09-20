@@ -3,7 +3,15 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import get_settings
 from app.jobs import start_scheduler, stop_scheduler
-from app.routers import videos_router, live_router, podcasts_router, gallery_router
+from app.routers import (
+    videos_router,
+    live_router,
+    podcasts_router,
+    gallery_router,
+    ebooks_router,
+    audio_resources_router,
+    library_router,
+)
 
 settings = get_settings()
 
@@ -46,6 +54,9 @@ app.include_router(videos_router)
 app.include_router(live_router)
 app.include_router(podcasts_router)
 app.include_router(gallery_router)
+app.include_router(ebooks_router)
+app.include_router(audio_resources_router)
+app.include_router(library_router)
 
 
 @app.get("/", tags=["Health"])

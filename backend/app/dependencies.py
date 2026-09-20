@@ -100,3 +100,21 @@ def get_youtube_service(db: Session = Depends(get_db)):
     return YouTubeService(
         db, settings=settings, client=get_youtube_client(), cache=get_youtube_live_cache()
     )
+
+
+def get_ebook_service(db: Session = Depends(get_db)):
+    from app.services.ebook_service import EBookService
+
+    return EBookService(db, settings=settings)
+
+
+def get_audio_resource_service(db: Session = Depends(get_db)):
+    from app.services.audio_resource_service import AudioResourceService
+
+    return AudioResourceService(db, settings=settings)
+
+
+def get_library_service(db: Session = Depends(get_db)):
+    from app.services.library_service import LibraryService
+
+    return LibraryService(db, settings=settings)

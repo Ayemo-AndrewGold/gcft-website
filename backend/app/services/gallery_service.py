@@ -10,6 +10,7 @@ import cloudinary.utils
 from app.config import get_settings
 from app.models.gallery_image import GalleryImage
 from app.services.base import BaseService
+from app.utils.cloudinary import configure_cloudinary
 
 logger = logging.getLogger("gcft_api.services.gallery")
 
@@ -18,20 +19,7 @@ class GalleryService(BaseService[GalleryImage]):
     def __init__(self, db: Session, settings=None):
         super().__init__(db, settings or get_settings())
         self.folder = self.settings.cloudinary_folder
-
-        if self.settings.cloudinary_url:
-            cloudinary.config(cloudinary_url=self.settings.cloudinary_url)
-        elif (
-            self.settings.cloudinary_cloud_name
-            and self.settings.cloudinary_api_key
-            and self.settings.cloudinary_api_secret
-        ):
-            cloudinary.config(
-                cloud_name=self.settings.cloudinary_cloud_name,
-                api_key=self.settings.cloudinary_api_key,
-                api_secret=self.settings.cloudinary_api_secret,
-                secure=True,
-            )
+        configure_cloudinary(self.settings)
 
     def generate_transform_urls(self, public_id: str, secure_url: str) -> Tuple[str, str]:
         """Generate automatic responsive variant URLs (thumbnail & optimized view)."""
