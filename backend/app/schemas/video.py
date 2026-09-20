@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, computed_field
 
 from app.schemas.common import PaginatedResponse, TimestampRead
 
@@ -18,7 +18,15 @@ class VideoCreate(VideoBase):
 
 
 class VideoRead(VideoBase, TimestampRead):
-    pass
+    @computed_field
+    @property
+    def watch_url(self) -> str:
+        return f"https://www.youtube.com/watch?v={self.youtube_id}"
+
+    @computed_field
+    @property
+    def embed_url(self) -> str:
+        return f"https://www.youtube.com/embed/{self.youtube_id}"
 
 
 # Backwards-compatible alias; new code should use PaginatedResponse[VideoRead].

@@ -28,9 +28,7 @@ def _run_sync_podcasts() -> dict:
     try:
         service = PodcastService(db)
         # service.sync_all is async; this thread has no running loop, so run it here.
-        import asyncio as _asyncio
-
-        return _asyncio.run(service.sync_all())
+        return asyncio.run(service.sync_all())
     finally:
         db.close()
 
@@ -49,9 +47,26 @@ def _run_sync_youtube() -> int:
     db = SessionLocal()
     try:
         service = YouTubeService(db)
-        import asyncio as _asyncio
+        return asyncio.run(service.fetch_and_upsert_videos())
+    finally:
+        db.close()
 
-        return _asyncio.run(service.fetch_and_upsert_videos())
+
+async def check_youtube_live_job():
+    """Background task to check YouTube live streaming status during service windows."""
+    logger.info("Executing scheduled job: check_youtube_live_job")
+    try:
+        status = await asyncio.to_thread(_run_check_youtube_live)
+        logger.info(f"check_youtube_live_job completed: is_live={status.is_live}")
+    except Exception as e:
+        logger.error(f"Error executing check_youtube_live_job: {e}")
+
+
+def _run_check_youtube_live():
+    db = SessionLocal()
+    try:
+        service = YouTubeService(db)
+        return asyncio.run(service.fetch_live_status(force_refresh=True))
     finally:
         db.close()
 
@@ -70,6 +85,18 @@ def start_scheduler():
             "interval",
             minutes=settings.job_sync_interval_minutes,
             id="sync_podcasts",
+            replace_existing=True,
+        )
+        # Sunday service window live check (Africa/Lagos, every 15 min).
+        # Costs ~100 quota units per call → ~400 units per Sunday, well within quota.
+        scheduler.add_job(
+            check_youtube_live_job,
+            "cron",
+            day_of_week="sun",
+            hour="9",
+            minute="*/15",
+            timezone="Africa/Lagos",
+            id="check_youtube_live",
             replace_existing=True,
         )
         scheduler.start()

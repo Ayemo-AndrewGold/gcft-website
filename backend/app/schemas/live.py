@@ -5,6 +5,7 @@ from pydantic import BaseModel, ConfigDict
 
 class LivePlatformStatus(BaseModel):
     is_live: bool = False
+    video_id: Optional[str] = None
     title: Optional[str] = None
     event_title: Optional[str] = None
     broadcast_title: Optional[str] = None
@@ -33,6 +34,7 @@ class LiveStatusRead(BaseModel):
 class LiveStatusUpdate(BaseModel):
     platform: str = "mixlr"
     is_live: Optional[bool] = None
+    video_id: Optional[str] = None
     stream_title: Optional[str] = None
     stream_url: Optional[str] = None
     embed_url: Optional[str] = None

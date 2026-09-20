@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 import httpx
 
 from app.schemas.live import LivePlatformStatus
+from app.utils.datetime import parse_iso_datetime as _parse_iso_datetime
 
 logger = logging.getLogger("gcft_api.services.mixlr_client")
 
@@ -33,13 +34,8 @@ def clean_title(raw: str) -> str:
 
 
 def parse_iso_datetime(raw: Any) -> Optional[datetime]:
-    """Parse Mixlr ISO timestamps, tolerating trailing 'Z'."""
-    if not raw or not isinstance(raw, str):
-        return None
-    try:
-        return datetime.fromisoformat(raw.replace("Z", "+00:00"))
-    except ValueError:
-        return None
+    """Backwards-compatible re-export of the shared ISO parser."""
+    return _parse_iso_datetime(raw)
 
 
 def map_included(included: List[Dict[str, Any]]) -> Dict[tuple, Dict[str, Any]]:
@@ -181,12 +177,10 @@ class MixlrClient:
         )
 
         included = map_included(payload.get("included", []))
-        current_broadcast_id = str(
-            data_obj.get("relationships", {})
-            .get("current_broadcast", {})
-            .get("data", {})
-            .get("id", "")
-        )
+        rel = data_obj.get("relationships") or {}
+        current_broadcast = rel.get("current_broadcast") or {}
+        cb_data = current_broadcast.get("data") or {}
+        current_broadcast_id = str(cb_data.get("id") or "")
         broadcast_attrs = included.get(("broadcast", current_broadcast_id), {})
         event_id = str(broadcast_attrs.get("event_id", ""))
         event_attrs = included.get(("event", event_id), {})

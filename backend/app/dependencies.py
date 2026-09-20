@@ -1,3 +1,4 @@
+from functools import lru_cache
 from typing import Callable, Optional
 from fastapi import Depends, Header, HTTPException, Query, status
 from pydantic import BaseModel
@@ -74,3 +75,28 @@ def get_podcast_service(db: Session = Depends(get_db)):
     from app.services.podcast_service import PodcastService
 
     return PodcastService(db, settings=settings, client=get_mixlr_client())
+
+
+def get_youtube_client():
+    from app.services.youtube_client import YouTubeClient
+
+    return YouTubeClient(
+        api_key=settings.youtube_api_key,
+        channel_id=settings.youtube_channel_id,
+    )
+
+
+@lru_cache()
+def get_youtube_live_cache():
+    """App-wide shared YouTube live cache (protects the 100-unit live check)."""
+    from app.services.youtube_service import YouTubeLiveCache
+
+    return YouTubeLiveCache()
+
+
+def get_youtube_service(db: Session = Depends(get_db)):
+    from app.services.youtube_service import YouTubeService
+
+    return YouTubeService(
+        db, settings=settings, client=get_youtube_client(), cache=get_youtube_live_cache()
+    )

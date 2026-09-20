@@ -15,6 +15,8 @@ class Settings(BaseSettings):
     # YouTube API
     youtube_api_key: Optional[str] = None
     youtube_channel_id: Optional[str] = None
+    youtube_live_cache_seconds: int = 180
+    youtube_recordings_sync_limit: int = 25
 
     # Cloudinary Integration
     cloudinary_url: Optional[str] = None
