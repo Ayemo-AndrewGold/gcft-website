@@ -1,14 +1,14 @@
 from datetime import datetime
 from typing import Optional
-from sqlalchemy import String, Text, Integer, BigInteger, DateTime, func
+from sqlalchemy import String, Text, Integer, BigInteger, DateTime
 from sqlalchemy.orm import Mapped, mapped_column
 from app.database import Base
+from app.models.base import TimestampMixin
 
 
-class PodcastEpisode(Base):
+class PodcastEpisode(TimestampMixin, Base):
     __tablename__ = "podcast_episodes"
 
-    id: Mapped[int] = mapped_column(primary_key=True, index=True, autoincrement=True)
     guid: Mapped[str] = mapped_column(String(255), unique=True, index=True, nullable=False)
     recording_id: Mapped[Optional[str]] = mapped_column(String(64), index=True, nullable=True)
     title: Mapped[str] = mapped_column(String(255), nullable=False)
@@ -20,8 +20,4 @@ class PodcastEpisode(Base):
     file_size_bytes: Mapped[Optional[int]] = mapped_column(BigInteger, nullable=True)
     duration: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)  # duration in seconds
     published_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), nullable=False)
-    updated_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False
-    )
 

@@ -1,6 +1,8 @@
 from datetime import datetime
-from typing import Optional, List
-from pydantic import BaseModel, ConfigDict
+from typing import Optional
+from pydantic import BaseModel
+
+from app.schemas.common import PaginatedResponse, TimestampRead
 
 
 class VideoBase(BaseModel):
@@ -15,14 +17,10 @@ class VideoCreate(VideoBase):
     pass
 
 
-class VideoRead(VideoBase):
-    id: int
-    created_at: datetime
-    updated_at: datetime
-
-    model_config = ConfigDict(from_attributes=True)
+class VideoRead(VideoBase, TimestampRead):
+    pass
 
 
-class VideoListResponse(BaseModel):
-    total: int
-    items: List[VideoRead]
+# Backwards-compatible alias; new code should use PaginatedResponse[VideoRead].
+class VideoListResponse(PaginatedResponse["VideoRead"]):
+    pass

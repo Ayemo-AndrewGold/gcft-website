@@ -1,6 +1,8 @@
 from datetime import datetime
-from typing import Optional, List
+from typing import Optional
 from pydantic import BaseModel, ConfigDict
+
+from app.schemas.common import PaginatedResponse, TimestampRead
 
 
 class PodcastEpisodeBase(BaseModel):
@@ -22,16 +24,11 @@ class PodcastEpisodeCreate(PodcastEpisodeBase):
     pass
 
 
-class PodcastEpisodeRead(PodcastEpisodeBase):
-    id: int
-    created_at: datetime
-    updated_at: datetime
-
-    model_config = ConfigDict(from_attributes=True)
+class PodcastEpisodeRead(PodcastEpisodeBase, TimestampRead):
+    pass
 
 
-class PodcastListResponse(BaseModel):
-    total: int
-    count: Optional[int] = None
-    items: List[PodcastEpisodeRead]
+# Backwards-compatible alias; new code should use PaginatedResponse[PodcastEpisodeRead].
+class PodcastListResponse(PaginatedResponse["PodcastEpisodeRead"]):
+    pass
 

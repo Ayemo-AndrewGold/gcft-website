@@ -1,29 +1,27 @@
 import logging
-from typing import List, Optional
+from typing import List, Optional, Tuple
 import httpx
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 from app.config import get_settings
 from app.models.video import Video
+from app.services.base import BaseService
 
 logger = logging.getLogger("gcft_api.services.youtube")
-settings = get_settings()
 
 
-class YouTubeService:
-    def __init__(self, db: Session):
-        self.db = db
-        self.api_key = settings.youtube_api_key
-        self.channel_id = settings.youtube_channel_id
+class YouTubeService(BaseService[Video]):
+    def __init__(self, db: Session, settings=None):
+        super().__init__(db, settings or get_settings())
+        self.api_key = self.settings.youtube_api_key
+        self.channel_id = self.settings.youtube_channel_id
 
-    def get_videos(self, skip: int = 0, limit: int = 20) -> tuple[List[Video], int]:
+    def get_videos(self, skip: int = 0, limit: int = 20) -> Tuple[List[Video], int]:
         query = select(Video).order_by(Video.published_at.desc())
-        total = self.db.query(Video).count()
-        videos = self.db.scalars(query.offset(skip).limit(limit)).all()
-        return list(videos), total
+        return self.paginate(query, skip=skip, limit=limit)
 
     def get_video_by_id(self, video_id: int) -> Optional[Video]:
-        return self.db.get(Video, video_id)
+        return self.get_by_id(Video, video_id)
 
     async def fetch_and_upsert_videos(self) -> int:
         if not self.api_key or not self.channel_id:

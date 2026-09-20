@@ -1,7 +1,7 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 from app.database import get_db
-from app.dependencies import get_pagination_params, PaginationParams, verify_api_key
+from app.dependencies import ensure_found, get_pagination_params, PaginationParams, verify_api_key
 from app.schemas.video import VideoRead, VideoListResponse
 from app.services.youtube_service import YouTubeService
 
@@ -16,20 +16,14 @@ def list_videos(
     """Get paginated list of videos."""
     service = YouTubeService(db)
     items, total = service.get_videos(skip=pagination.skip, limit=pagination.limit)
-    return VideoListResponse(total=total, items=items)
+    return VideoListResponse(total=total, count=len(items), items=items)
 
 
 @router.get("/{video_id}", response_model=VideoRead)
 def get_video(video_id: int, db: Session = Depends(get_db)):
     """Get a single video by ID."""
     service = YouTubeService(db)
-    video = service.get_video_by_id(video_id)
-    if not video:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Video with ID {video_id} not found",
-        )
-    return video
+    return ensure_found(service.get_video_by_id(video_id), f"Video with ID {video_id} not found")
 
 
 @router.post("/sync", status_code=status.HTTP_200_OK)

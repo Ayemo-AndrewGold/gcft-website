@@ -1,6 +1,7 @@
-from datetime import datetime
-from typing import Optional, List
-from pydantic import BaseModel, ConfigDict
+from typing import Optional
+from pydantic import BaseModel
+
+from app.schemas.common import PaginatedResponse, TimestampRead
 
 
 class GalleryImageBase(BaseModel):
@@ -10,11 +11,8 @@ class GalleryImageBase(BaseModel):
     caption: Optional[str] = None
 
 
-class GalleryImageRead(GalleryImageBase):
-    id: int
-    created_at: datetime
-
-    model_config = ConfigDict(from_attributes=True)
+class GalleryImageRead(GalleryImageBase, TimestampRead):
+    pass
 
 
 class GalleryImageUploadResponse(BaseModel):
@@ -22,6 +20,5 @@ class GalleryImageUploadResponse(BaseModel):
     image: GalleryImageRead
 
 
-class GalleryListResponse(BaseModel):
-    total: int
-    items: List[GalleryImageRead]
+class GalleryListResponse(PaginatedResponse["GalleryImageRead"]):
+    pass

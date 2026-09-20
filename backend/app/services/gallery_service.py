@@ -1,3 +1,4 @@
+import asyncio
 import logging
 from typing import List, Optional, Tuple
 from sqlalchemy import select
@@ -6,25 +7,23 @@ import cloudinary
 import cloudinary.uploader
 from app.config import get_settings
 from app.models.gallery_image import GalleryImage
+from app.services.base import BaseService
 
 logger = logging.getLogger("gcft_api.services.gallery")
-settings = get_settings()
 
 
-class GalleryService:
-    def __init__(self, db: Session):
-        self.db = db
-        if settings.cloudinary_url:
-            cloudinary.config(cloudinary_url=settings.cloudinary_url)
+class GalleryService(BaseService[GalleryImage]):
+    def __init__(self, db: Session, settings=None):
+        super().__init__(db, settings or get_settings())
+        if self.settings.cloudinary_url:
+            cloudinary.config(cloudinary_url=self.settings.cloudinary_url)
 
     def get_images(self, skip: int = 0, limit: int = 20) -> Tuple[List[GalleryImage], int]:
         query = select(GalleryImage).order_by(GalleryImage.created_at.desc())
-        total = self.db.query(GalleryImage).count()
-        images = self.db.scalars(query.offset(skip).limit(limit)).all()
-        return list(images), total
+        return self.paginate(query, skip=skip, limit=limit)
 
     def get_image_by_id(self, image_id: int) -> Optional[GalleryImage]:
-        return self.db.get(GalleryImage, image_id)
+        return self.get_by_id(GalleryImage, image_id)
 
     def create_image_record(self, public_id: str, image_url: str, title: Optional[str] = None, caption: Optional[str] = None) -> GalleryImage:
         image = GalleryImage(
@@ -38,8 +37,11 @@ class GalleryService:
         self.db.refresh(image)
         return image
 
-    def upload_and_save(self, file_content: bytes, title: Optional[str] = None, caption: Optional[str] = None) -> GalleryImage:
-        upload_result = cloudinary.uploader.upload(file_content, folder="gcft_gallery")
+    async def upload_and_save(self, file_content: bytes, title: Optional[str] = None, caption: Optional[str] = None) -> GalleryImage:
+        # Cloudinary SDK is blocking — run in a thread to keep the loop free.
+        upload_result = await asyncio.to_thread(
+            cloudinary.uploader.upload, file_content, folder="gcft_gallery"
+        )
         public_id = upload_result.get("public_id")
         secure_url = upload_result.get("secure_url") or upload_result.get("url")
 
