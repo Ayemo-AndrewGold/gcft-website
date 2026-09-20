@@ -18,6 +18,10 @@ class Settings(BaseSettings):
 
     # Cloudinary Integration
     cloudinary_url: Optional[str] = None
+    cloudinary_cloud_name: Optional[str] = None
+    cloudinary_api_key: Optional[str] = None
+    cloudinary_api_secret: Optional[str] = None
+    cloudinary_folder: str = "gcft_gallery"
 
     # Mixlr & Audio Streaming
     mixlr_channel_name: Optional[str] = None
