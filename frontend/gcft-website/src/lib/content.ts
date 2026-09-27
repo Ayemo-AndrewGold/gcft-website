@@ -41,13 +41,24 @@ export const socials = {
   twitter: "https://twitter.com/christftchurch",
 };
 
-export const navLinks = [
-  { name: "Home", href: "#top" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#events" },
-  { name: "Sermons", href: "#teachings" },
-  { name: "Library", href: "#archives" },
-  { name: "Contact", href: "#contact" },
+export type NavItem = { name: string; href: string; children?: { name: string; href: string; description?: string }[] };
+
+/* About sub-pages (dropdown under "About") */
+export const aboutPages = [
+  { name: "Who We Are", href: "/about", description: "Our identity, mission & motto" },
+  { name: "Our Beliefs", href: "/about/beliefs", description: "Back to the Bible" },
+  { name: "The Message", href: "/about/the-message", description: "Malachi 4:5–6b & Revelation 10:7" },
+  { name: "Our Ministers", href: "/about/ministers", description: "Those who labour in the Word" },
+];
+
+export const navLinks: NavItem[] = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about", children: aboutPages },
+  { name: "Services", href: "/#events" },
+  { name: "Sermons", href: "/#teachings" },
+  { name: "Library", href: "/#archives" },
+  { name: "Newsletter", href: "/newsletter" },
+  { name: "Contact", href: "/contact" },
 ];
 
 /* Slim utility bar above the main header */
@@ -58,7 +69,7 @@ export const utilityLinks = {
   ],
   right: [
     { name: "Prayer Request", href: `mailto:${site.email}?subject=Prayer%20Request` },
-    { name: "Schedule", href: "#events" },
+    { name: "Schedule", href: "/#events" },
   ],
 };
 
@@ -331,11 +342,13 @@ export const resources: {
 
 export const footerLinks = {
   quick: [
-    { name: "Home", href: "#top" },
-    { name: "About Us", href: "#about" },
-    { name: "Service Times", href: "#events" },
-    { name: "Sermons", href: "#teachings" },
-    { name: "Library", href: "#archives" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Our Beliefs", href: "/about/beliefs" },
+    { name: "Service Times", href: "/#events" },
+    { name: "Sermons", href: "/#teachings" },
+    { name: "Newsletter", href: "/newsletter" },
+    { name: "Contact", href: "/contact" },
   ],
   involved: [
     { name: "Audio Sermons", href: socials.spotify },

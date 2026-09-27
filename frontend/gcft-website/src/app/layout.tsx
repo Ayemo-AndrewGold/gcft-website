@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import Header from "@/components/Header";
+import Footer, { ServiceBar } from "@/components/Footer";
 import "./globals.css";
 
 /* Playfair Display — editorial serif for headlines & scripture */
@@ -20,7 +22,10 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Glorious Christian Fellowship Tabernacle (GCFT) — Where the Truth Still Exists",
+  title: {
+    default: "Glorious Christian Fellowship Tabernacle (GCFT) — Where the Truth Still Exists",
+    template: "%s | GCFT",
+  },
   description:
     "GCFT is an independent, non-denominational, Bible-believing church at 1 Salvation Avenue, Ijoko, Sango Ota, Ogun State, Nigeria. Sundays 9 AM – 2 PM WAT.",
 };
@@ -40,7 +45,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-full flex flex-col bg-surface font-body text-on-surface">
+        <Header />
         {children}
+        <Footer />
+        <ServiceBar />
       </body>
     </html>
   );
