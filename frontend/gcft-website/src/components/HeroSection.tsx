@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { images } from "@/lib/images";
 import { site, socials, tickerItems } from "@/lib/content";
@@ -68,13 +69,13 @@ export default function HeroSection({ videoSrc = site.heroVideo }: Partial<HeroS
               <Icon name="play_arrow" fill />
               Watch Latest Service
             </a>
-            <a
-              href="#about"
+            <Link
+              href="/about"
               className="inline-flex items-center justify-center gap-space-xs rounded-lg px-space-lg py-space-md text-label-md text-secondary transition-all hover:bg-surface-container-high/60 hover:text-primary"
             >
               Learn More About Us
               <Icon name="arrow_forward" size={18} />
-            </a>
+            </Link>
           </div>
         </div>
 

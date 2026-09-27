@@ -35,19 +35,38 @@ export const site = {
 
 export const socials = {
   youtube: "https://www.youtube.com/c/GloriousChristianFellowshipTabernacle",
+  youtubeChannelId: "UCbtIQ5Uv5KwTKxdbZaKbH1Q",
   facebook: "https://www.facebook.com/christftchurch/",
   spotify: "https://open.spotify.com/show/4CaXpWmHpD67C47FKq8Jt9",
   instagram: "https://www.instagram.com/christftchurch/",
   twitter: "https://twitter.com/christftchurch",
 };
 
-export const navLinks = [
-  { name: "Home", href: "#top" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#events" },
-  { name: "Sermons", href: "#teachings" },
-  { name: "Library", href: "#archives" },
-  { name: "Contact", href: "#contact" },
+export type NavItem = { name: string; href: string; children?: { name: string; href: string; description?: string }[] };
+
+/* About sub-pages (dropdown under "About") */
+export const aboutPages = [
+  { name: "Who We Are", href: "/about", description: "Our identity, mission & motto" },
+  { name: "Our Beliefs", href: "/about/beliefs", description: "Back to the Bible" },
+  { name: "The Message", href: "/about/the-message", description: "Malachi 4:5–6b & Revelation 10:7" },
+  { name: "Our Ministers", href: "/about/ministers", description: "Those who labour in the Word" },
+];
+
+/* Live Experience sub-pages (dropdown under "Live Experience") */
+export const livePages = [
+  { name: "Watch Live", href: "/live", description: "Sunday song service & the Word, streamed" },
+  { name: "Camp Meeting", href: "/live/camp-meeting", description: "Our annual gathering" },
+  { name: "Conventions", href: "/live/conventions", description: "Convention messages & replays" },
+];
+
+export const navLinks: NavItem[] = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about", children: aboutPages },
+  { name: "Live Experience", href: "/live", children: livePages },
+  { name: "Services", href: "/#events" },
+  { name: "Sermons", href: "/#teachings" },
+  { name: "Newsletter", href: "/newsletter" },
+  { name: "Contact", href: "/contact" },
 ];
 
 /* Slim utility bar above the main header */
@@ -58,7 +77,7 @@ export const utilityLinks = {
   ],
   right: [
     { name: "Prayer Request", href: `mailto:${site.email}?subject=Prayer%20Request` },
-    { name: "Schedule", href: "#events" },
+    { name: "Schedule", href: "/#events" },
   ],
 };
 
@@ -331,11 +350,13 @@ export const resources: {
 
 export const footerLinks = {
   quick: [
-    { name: "Home", href: "#top" },
-    { name: "About Us", href: "#about" },
-    { name: "Service Times", href: "#events" },
-    { name: "Sermons", href: "#teachings" },
-    { name: "Library", href: "#archives" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Our Beliefs", href: "/about/beliefs" },
+    { name: "Service Times", href: "/#events" },
+    { name: "Sermons", href: "/#teachings" },
+    { name: "Newsletter", href: "/newsletter" },
+    { name: "Contact", href: "/contact" },
   ],
   involved: [
     { name: "Audio Sermons", href: socials.spotify },
