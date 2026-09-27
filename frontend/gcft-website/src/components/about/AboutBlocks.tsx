@@ -31,6 +31,7 @@ export function PageHero({
   current,
   crumbs,
   showAboutTabs = true,
+  tabs,
 }: {
   image?: string;
   title: string;
@@ -38,7 +39,10 @@ export function PageHero({
   /** Breadcrumb trail after "Home"; defaults to the About trail. */
   crumbs?: { name: string; href?: string }[];
   showAboutTabs?: boolean;
+  /** Custom sub-page tabs; defaults to the About pages. */
+  tabs?: { name: string; href: string }[];
 }) {
+  const tabList = tabs ?? (showAboutTabs ? aboutPages : null);
   const trail =
     crumbs ?? [{ name: "About", href: "/about" }, ...(current !== "Who We Are" ? [{ name: current }] : [])];
   return (
@@ -77,9 +81,9 @@ export function PageHero({
         </div>
 
         {/* Sub-page tabs */}
-        {showAboutTabs && (
-        <nav aria-label="About sections" className="no-scrollbar mt-space-lg flex gap-space-xs overflow-x-auto">
-          {aboutPages.map((p) => {
+        {tabList && (
+        <nav aria-label="Section pages" className="no-scrollbar mt-space-lg flex gap-space-xs overflow-x-auto">
+          {tabList.map((p) => {
             const isCurrent = p.name === current;
             return (
               <Link

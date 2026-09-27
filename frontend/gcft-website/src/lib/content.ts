@@ -35,6 +35,7 @@ export const site = {
 
 export const socials = {
   youtube: "https://www.youtube.com/c/GloriousChristianFellowshipTabernacle",
+  youtubeChannelId: "UCbtIQ5Uv5KwTKxdbZaKbH1Q",
   facebook: "https://www.facebook.com/christftchurch/",
   spotify: "https://open.spotify.com/show/4CaXpWmHpD67C47FKq8Jt9",
   instagram: "https://www.instagram.com/christftchurch/",
@@ -51,12 +52,19 @@ export const aboutPages = [
   { name: "Our Ministers", href: "/about/ministers", description: "Those who labour in the Word" },
 ];
 
+/* Live Experience sub-pages (dropdown under "Live Experience") */
+export const livePages = [
+  { name: "Watch Live", href: "/live", description: "Sunday song service & the Word, streamed" },
+  { name: "Camp Meeting", href: "/live/camp-meeting", description: "Our annual gathering" },
+  { name: "Conventions", href: "/live/conventions", description: "Convention messages & replays" },
+];
+
 export const navLinks: NavItem[] = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about", children: aboutPages },
+  { name: "Live Experience", href: "/live", children: livePages },
   { name: "Services", href: "/#events" },
   { name: "Sermons", href: "/#teachings" },
-  { name: "Library", href: "/#archives" },
   { name: "Newsletter", href: "/newsletter" },
   { name: "Contact", href: "/contact" },
 ];

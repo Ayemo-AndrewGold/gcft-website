@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { navLinks as defaultLinks, site, socials, utilityLinks, type NavItem } from "@/lib/content";
+import { navLinks as defaultLinks, site, utilityLinks, type NavItem } from "@/lib/content";
 import type { HeaderProps } from "./types";
 import { Icon, linkProps } from "./ui";
 
@@ -254,13 +254,13 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
           </nav>
 
           <div className="hidden items-center gap-space-sm lg:flex">
-            <a
-              {...linkProps(socials.youtube)}
+            <Link
+              href="/live"
               className="inline-flex items-center gap-2 rounded-lg border border-primary-container px-4 py-2 text-[14px] font-bold text-white transition-colors hover:bg-primary-container/10"
             >
               Watch Live
               <PlayTile />
-            </a>
+            </Link>
             <Link
               href="/contact"
               className="inline-flex items-center rounded-lg bg-primary-container px-5 py-2.5 text-[14px] font-semibold text-on-primary shadow-glow transition-all hover:bg-primary-fixed"
@@ -342,14 +342,14 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
             ),
           )}
           <div className="mt-space-md flex flex-col gap-3 border-t border-white/10 pt-space-md">
-            <a
-              {...linkProps(socials.youtube)}
+            <Link
+              href="/live"
               onClick={() => setOpen(false)}
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-primary-container py-3 text-[16px] font-bold text-white"
             >
               Watch Live
               <PlayTile />
-            </a>
+            </Link>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
