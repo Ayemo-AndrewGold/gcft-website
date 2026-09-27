@@ -11,5 +11,4 @@ export interface HeaderProps {
 
 export interface HeroSectionProps {
   videoSrc: string;
-  navLinks?: NavLink[];
 }

@@ -1,3 +1,11 @@
-export { default as Header } from './Header';
-export { default as HeroSection } from './HeroSection';
-export * from './types';
+export { default as Header, Logo } from "./Header";
+export { default as HeroSection } from "./HeroSection";
+export { default as AboutSection } from "./AboutSection";
+export { default as EventsSection } from "./EventsSection";
+export { default as TeachingsSection } from "./TeachingsSection";
+export { default as ArchivesSection } from "./ArchivesSection";
+export { default as NewsletterSection } from "./NewsletterSection";
+export { default as ContactSection } from "./ContactSection";
+export { default as Footer, ServiceBar } from "./Footer";
+export * from "./ui";
+export * from "./types";
