@@ -3,11 +3,16 @@ import time
 from datetime import datetime, timezone
 from unittest.mock import AsyncMock, patch, MagicMock
 from fastapi.testclient import TestClient
+from sqlalchemy.exc import OperationalError
 
 from app.config import get_settings
+from app.dependencies import get_mixlr_service, get_youtube_service
+from app.main import app
 from app.models.video import Video
 from app.models.live_status import LiveStatus
 from app.schemas.live import LivePlatformStatus
+from app.services.mixlr_client import MixlrClient
+from app.services.mixlr_service import MixlrService
 from app.services.youtube_client import YouTubeClient
 from app.services.youtube_service import YouTubeLiveCache, YouTubeService, extract_video_id
 from app.utils.datetime import parse_iso_datetime
@@ -354,3 +359,41 @@ def test_live_manual_override_for_youtube(client: TestClient):
     assert data["youtube"]["is_live"] is True
     assert data["youtube"]["video_id"] == "manual_yt_101"
     assert data["youtube"]["embed_url"] == "https://www.youtube.com/embed/manual_yt_101"
+
+
+def test_live_endpoint_survives_total_outage(client: TestClient):
+    """GET /live degrades to offline (not 500) when external APIs AND the DB are down."""
+    def _boom(*args, **kwargs):
+        raise OperationalError("SELECT 1", {}, Exception("database unreachable"))
+
+    broken_db = MagicMock()
+    broken_db.scalars.side_effect = _boom
+    broken_db.query.side_effect = _boom
+    broken_db.get.side_effect = _boom
+
+    mixlr_client = MixlrClient(channel_name="gcftmedia", channel_id="654")
+    mixlr_client.fetch_live_v3 = AsyncMock(return_value=None)
+    mixlr_client.fetch_live_legacy = AsyncMock(return_value=None)
+
+    yt_client = YouTubeClient(api_key="fake-key", channel_id="UCfake")
+    yt_client.fetch_live_status = AsyncMock(return_value=None)
+
+    app.dependency_overrides[get_mixlr_service] = lambda: MixlrService(
+        db=broken_db, client=mixlr_client
+    )
+    app.dependency_overrides[get_youtube_service] = lambda: YouTubeService(
+        db=broken_db, client=yt_client, cache=YouTubeLiveCache()
+    )
+    try:
+        res = client.get("/live")
+    finally:
+        app.dependency_overrides.pop(get_mixlr_service, None)
+        app.dependency_overrides.pop(get_youtube_service, None)
+
+    assert res.status_code == 200
+    data = res.json()
+    assert data["is_live"] is False
+    assert data["mixlr"]["is_live"] is False
+    assert data["youtube"]["is_live"] is False
+    # Player shell URLs still resolve from client config
+    assert data["mixlr"]["embed_url"] == "https://gcftmedia.mixlr.com/embed"

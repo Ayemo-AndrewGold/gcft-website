@@ -178,8 +178,21 @@ class YouTubeService(BaseService[Video]):
         return result
 
     def _fallback_from_db(self) -> LivePlatformStatus:
-        """Fallback to the last known database record when external API fails or is unconfigured."""
-        status_rec = self.get_db_live_status("youtube")
+        """Fallback to the last known database record when external API fails or is unconfigured.
+
+        Returns an offline placeholder (never raises) when the database itself
+        is unreachable, so live endpoints degrade instead of returning 500.
+        """
+        try:
+            status_rec = self.get_db_live_status("youtube")
+        except Exception as dbe:
+            logger.warning(f"YouTube live status DB fallback unavailable: {dbe}")
+            return LivePlatformStatus(
+                is_live=False,
+                channel_name=self.client.channel_name,
+                stream_url=self.client.livepage_url,
+                embed_url=None,
+            )
         if not status_rec:
             return LivePlatformStatus(
                 is_live=False,

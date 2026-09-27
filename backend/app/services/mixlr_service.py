@@ -121,8 +121,16 @@ class MixlrService(BaseService[LiveStatus]):
         return result
 
     def _fallback_from_db(self) -> LivePlatformStatus:
-        """Fallback to the last known database record when external APIs fail."""
-        status_rec = self.get_db_live_status("mixlr")
+        """Fallback to the last known database record when external APIs fail.
+
+        Returns an offline placeholder (never raises) when the database itself
+        is unreachable, so live endpoints degrade instead of returning 500.
+        """
+        try:
+            status_rec = self.get_db_live_status("mixlr")
+        except Exception as dbe:
+            logger.warning(f"Live status DB fallback unavailable: {dbe}")
+            return LivePlatformStatus(is_live=False, embed_url=self.client.embed_url)
         if not status_rec:
             return LivePlatformStatus(is_live=False, embed_url=self.client.embed_url)
 

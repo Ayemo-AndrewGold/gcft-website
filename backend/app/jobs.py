@@ -79,6 +79,8 @@ def start_scheduler():
             minutes=settings.job_sync_interval_minutes,
             id="sync_youtube_videos",
             replace_existing=True,
+            misfire_grace_time=300,
+            coalesce=True,
         )
         scheduler.add_job(
             sync_podcasts_job,
@@ -86,18 +88,22 @@ def start_scheduler():
             minutes=settings.job_sync_interval_minutes,
             id="sync_podcasts",
             replace_existing=True,
+            misfire_grace_time=300,
+            coalesce=True,
         )
         # Sunday service window live check (Africa/Lagos, every 15 min).
-        # Costs ~100 quota units per call → ~400 units per Sunday, well within quota.
+        # Costs ~100 quota units per call → ~800 units per Sunday, well within quota.
         scheduler.add_job(
             check_youtube_live_job,
             "cron",
             day_of_week="sun",
-            hour="9",
+            hour="9-10",
             minute="*/15",
             timezone="Africa/Lagos",
             id="check_youtube_live",
             replace_existing=True,
+            misfire_grace_time=300,
+            coalesce=True,
         )
         scheduler.start()
         logger.info("APScheduler (async) started successfully.")
