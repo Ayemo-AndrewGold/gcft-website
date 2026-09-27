@@ -1,103 +1,245 @@
 @import "tailwindcss";
 
-:root {
-  --background: #FAF9F6;
-  --foreground: #1C1C1C;
-  
-  /* Brand fonts */
-  --font-display: 'Cormorant Garamond', 'Cormorant', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  
-  /* Brand colors */
-  --navy: #1E3A8A;
-  --gold: #F4C430;
-  --bg: #FAF9F6;
-  --ink: #1C1C1C;
-  --ink-muted: #6B6B68;
-  --rule: #E4E2DD;
-}
+/*
+ * GCFT — "Sanctuary Modern" design system (green accent: #00ff00)
+ * Source of truth: stitch_modern_church_media_platform/DESIGN.md
+ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-body);
-  --font-serif: var(--font-display);
-  
-  /* Brand color utilities */
-  --color-navy: var(--navy);
-  --color-gold: var(--gold);
-  --color-bg: var(--bg);
-  --color-ink: var(--ink);
-  --color-ink-muted: var(--ink-muted);
-  --color-rule: var(--rule);
-  
-  /* Custom animations */
-  --animate-marquee: marquee 30s linear infinite;
-  --animate-bounce: bounce 1s infinite;
-  
-  /* Extra small breakpoint for mobile */
+  /* Typography */
+  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-body: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
+}
+
+@theme {
+  /* Surfaces */
+  --color-surface: #0e131f;
+  --color-surface-dim: #0e131f;
+  --color-surface-bright: #343946;
+  --color-surface-container-lowest: #090e1a;
+  --color-surface-container-low: #161b28;
+  --color-surface-container: #1a1f2c;
+  --color-surface-container-high: #252a37;
+  --color-surface-container-highest: #303542;
+  --color-surface-variant: #303542;
+  --color-background: #0e131f;
+
+  /* Content */
+  --color-on-surface: #dee2f3;
+  --color-on-surface-variant: #c3cad6;
+  --color-on-background: #dee2f3;
+  --color-outline: #8a978f;
+  --color-outline-variant: #34443b;
+
+  /* Primary — Signal Green (#00ff00) */
+  --color-primary: #00ff00;
+  --color-on-primary: #002b00;
+  --color-primary-container: #00ff00;
+  --color-on-primary-container: #003d00;
+  --color-primary-fixed: #66ff66;
+  --color-primary-fixed-dim: #00e600;
+  --color-on-primary-fixed: #001a00;
+
+  /* Secondary — Soft Sage */
+  --color-secondary: #b9cfc0;
+  --color-on-secondary: #1d3325;
+  --color-secondary-container: #2f4a39;
+
+  /* Tertiary */
+  --color-tertiary: #c2e2ff;
+
+  /* Error / Live */
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  /* Type scale */
+  --text-display-hero: 56px;
+  --text-display-hero--line-height: 64px;
+  --text-display-hero--letter-spacing: -0.02em;
+  --text-display-hero--font-weight: 600;
+  --text-display-hero-mobile: 36px;
+  --text-display-hero-mobile--line-height: 44px;
+  --text-display-hero-mobile--letter-spacing: -0.01em;
+  --text-display-hero-mobile--font-weight: 600;
+  --text-headline-lg: 40px;
+  --text-headline-lg--line-height: 48px;
+  --text-headline-lg--letter-spacing: -0.015em;
+  --text-headline-lg--font-weight: 500;
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 36px;
+  --text-headline-lg-mobile--font-weight: 500;
+  --text-headline-md: 28px;
+  --text-headline-md--line-height: 36px;
+  --text-headline-md--font-weight: 500;
+  --text-headline-sm: 22px;
+  --text-headline-sm--line-height: 30px;
+  --text-headline-sm--font-weight: 600;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 20px;
+  --text-label-md: 14px;
+  --text-label-md--line-height: 20px;
+  --text-label-md--letter-spacing: 0.02em;
+  --text-label-md--font-weight: 600;
+  --text-label-sm: 11px;
+  --text-label-sm--line-height: 16px;
+  --text-label-sm--letter-spacing: 0.08em;
+  --text-label-sm--font-weight: 600;
+
+  /* Spacing tokens */
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-sm: 1rem;
+  --spacing-margin: 4rem;
+  --spacing-margin-sm: 1.25rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-section: 5rem;
+
+  /* Layout */
+  --container-shell: 1320px;
+
+  /* Elevation */
+  --shadow-float: 0 12px 32px -8px rgba(5, 8, 14, 0.7);
+  --shadow-glow: 0 0 16px rgba(0, 255, 0, 0.3);
+  --shadow-glow-lg: 0 0 24px rgba(0, 255, 0, 0.35);
+
   --breakpoint-xs: 475px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    @media (min-width: 768px) {
+      scroll-padding-top: 8rem;
+    }
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--color-surface);
+    color: var(--color-on-surface);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior-y: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background: var(--color-primary-container);
+    color: var(--color-on-primary-container);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary-container);
+    outline-offset: 2px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  /* Prevent iOS zoom on input focus */
+  @media (max-width: 640px) {
+    input,
+    select,
+    textarea {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Material Symbols (loaded in layout.tsx) */
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  user-select: none;
+}
+
+.icon-fill {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Frosted surfaces from DESIGN.md → Elevation & Depth */
+@utility glass-1 {
+  background: rgba(21, 28, 44, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 255, 0, 0.12);
+}
+
+@utility glass-2 {
+  background: rgba(15, 20, 32, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 255, 0, 0.22);
+}
+
+@utility candle-glow {
+  background-image: radial-gradient(circle at top, rgba(0, 255, 0, 0.08) 0%, transparent 70%);
 }
 
 @keyframes marquee {
   0% {
-    transform: translate3d(100%, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
-/* Typography base styles */
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--font-body);
+@theme {
+  --animate-marquee: marquee 30s linear infinite;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  color: var(--ink);
-}
-
-/* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee,
-  .animate-bounce {
-    animation: none !important;
+  html {
+    scroll-behavior: auto;
   }
-}
-
-/* Mobile optimizations */
-@media (max-width: 640px) {
-  /* Improve touch targets on mobile */
-  button, a {
-    min-height: 44px;
-    min-width: 44px;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  
-  /* Optimize text rendering on mobile */
-  body {
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  /* Prevent zoom on input focus */
-  input, select, textarea {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }

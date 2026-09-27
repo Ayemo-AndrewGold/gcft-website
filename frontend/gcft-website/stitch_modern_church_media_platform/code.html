@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-container": "#93000a", "primary-fixed": "#ffdea6", "on-tertiary-fixed-variant": "#004b71", "on-tertiary": "#00344f", "on-tertiary-container": "#00547e", "tertiary-fixed": "#cbe6ff", "on-surface": "#dee2f3", "inverse-surface": "#dee2f3", "tertiary-container": "#84c9ff", "background": "#0e131f", "on-primary-fixed": "#271900", "inverse-primary": "#7c5800", "tertiary": "#c2e2ff", "on-secondary": "#3e2d1d", "on-background": "#dee2f3", "surface-container-high": "#252a37", "surface-bright": "#343946", "surface": "#0e131f", "on-primary-container": "#684a00", "surface-tint": "#f5be4e", "on-secondary-container": "#cab19a", "secondary-container": "#564332", "outline": "#9c8f7c", "secondary-fixed-dim": "#dcc2ab", "secondary": "#dcc2ab", "surface-container-highest": "#303542", "inverse-on-surface": "#2b303d", "on-secondary-fixed": "#27190a", "surface-container-lowest": "#090e1a", "outline-variant": "#4f4536", "error": "#ffb4ab", "on-primary": "#412d00", "primary-container": "#f0b94a", "secondary-fixed": "#f9dec5", "on-error": "#690005", "on-tertiary-fixed": "#001e30", "surface-variant": "#303542", "on-surface-variant": "#d3c5b0", "on-error-container": "#ffdad6", "on-secondary-fixed-variant": "#564332", "surface-dim": "#0e131f", "primary": "#ffd894", "surface-container": "#1a1f2c", "primary-fixed-dim": "#f5be4e", "tertiary-fixed-dim": "#8fcdff", "on-primary-fixed-variant": "#5e4200", "surface-container-low": "#161b28" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-sm": "1.25rem", "gutter-sm": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "1rem", "margin": "4rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xl": "2.5rem" }, "fontFamily": { "headline-sm": [ "Playfair Display" ], "display-hero-mobile": [ "Playfair Display" ], "headline-lg-mobile": [ "Playfair Display" ], "headline-md": [ "Playfair Display" ], "label-sm": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "display-hero": [ "Playfair Display" ], "headline-lg": [ "Playfair Display" ], "label-md": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-sm": [ "22px", { "lineHeight": "30px", "fontWeight": "600" } ], "display-hero-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "36px", "fontWeight": "500" } ], "headline-md": [ "28px", { "lineHeight": "36px", "fontWeight": "500" } ], "label-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "display-hero": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "headline-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "500" } ], "label-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "body-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_12px_32px_-8px_rgba(5,8,14,0.7)]"><div class="h-20 max-w-[1320px] mx-auto px-margin-sm md:px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md"><img alt="Sanctuary Church Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X57w6nZeVBU5UaSvrvTz_1XpMzXkn4VMiidV9264OhV1eDMQ8O8fR-zTP9wn5AtP6tIH9PNbS1nBdd6nLVuRPxrAH7v8h0o88B0DTD07UQ0fsC1Qee4S5d0QjcGNGoae_Jvg0IBk205Qcla748y_27OZfI19fHBJxZSCVNCHePzjKN8tQNvz3ynqDnmzqsPNXf7GAc9pfa7ZcytBiW19Fki2lXNipFu_QtQIinW9mdEEEpI4QzGDJgw3wu"/><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">Sanctuary</span></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="bg-surface-container-high text-primary font-bold rounded-lg"><a aria-current="page" class="transition-colors py-space-xs px-space-sm bg-surface-container-high text-primary font-bold rounded-lg" data-path="home" href="#">Home</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm" data-path="about" href="#">About</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm" data-path="events" href="#">Events</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm" data-path="teachings" href="#">Teachings</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm" data-path="archives" href="#">Archives</a></nav><div class="flex items-center gap-space-md"><a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors hidden sm:inline-block" data-path="give" href="#">Give</a><a class="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-md text-label-md px-space-lg py-space-sm rounded-lg hover:bg-primary-fixed hover:text-on-primary-fixed transition-all shadow-[0_0_16px_rgba(240,185,74,0.3)]" data-path="watch-online" href="#">Watch Online</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 pb-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- 1. HERO SECTION -->
+<section class="relative w-full -mt-20 overflow-hidden bg-surface">
+<!-- Hero Background Image & Layered Dark Vignette Scrim -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A warm, atmospheric dark church sanctuary interior illuminated by golden theatrical stage lights with an engaged congregation hands raised in worship, haze drifting through beams of amber and amber-gold luminescence, shot on 35mm film aesthetic with deep charcoal shadows and rich chiaroscuro contrast." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLXGJRuNgEczY5CWnQ0J5MJuen28eUA2u88JAIeiVY5QMFn2-AX01PH6Tj9YBj7VNCjUWqN_-Xs8u0ZmudpNOr8qz89CglerA3qLf0OHWq-MM-v9xxtHWBAnEx2KewBhAY73TtDQTVj5IaSZUyPCTHHfRxjVE5SwqCUC34wvUMXcU3VbDWpIeeeO6-bRVZ2GOs2TAU49nxafKoQo4hvcJ65t33TlknrS4iNKCwB1B3uIpZ387Yi4uemg')">
+</div>
+<!-- Complex Gradient Scrim: Bleed under shell header, vignette edges, resolve cleanly into next section -->
+<div class="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/40 to-surface"></div>
+<div class="absolute inset-0 bg-radial-[at_center_center] from-transparent via-surface/60 to-surface"></div>
+</div>
+<!-- Hero Content Container -->
+<div class="relative z-10 max-w-[1320px] mx-auto px-margin-sm md:px-margin pt-40 md:pt-48 pb-20 flex flex-col justify-between min-h-[942px]">
+<!-- Top Badging & Editorial Headline -->
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container/80 backdrop-blur-md mb-space-lg">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">Welcome Home to Sanctuary</span>
+</div>
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface tracking-tight mb-space-md">
+          A Sacred Space for <span class="italic font-headline-lg text-primary-container">Grace</span>, Truth &amp; Transformation.
+        </h1>
+<p class="font-body-lg text-body-md md:text-body-lg text-on-surface-variant max-w-2xl mb-space-xl leading-relaxed">
+          Gathering weekly in the heart of the city and across the globe to encounter the living God through authentic worship, thoughtful scripture, and genuine community.
+        </p>
+<!-- Action CTAs -->
+<div class="flex flex-wrap items-center gap-space-md">
+<a class="inline-flex items-center gap-space-xs bg-primary-container text-on-primary font-label-md text-label-md px-space-xl py-space-md rounded-lg hover:bg-primary-fixed transition-all shadow-[0_0_24px_rgba(240,185,74,0.35)] active:scale-95" href="#teachings-section">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+            Watch Latest Message
+          </a>
+<a class="inline-flex items-center gap-space-xs bg-transparent text-secondary hover:text-primary font-label-md text-label-md px-space-lg py-space-md rounded-lg hover:bg-surface-container-high/60 transition-all" href="#about-section">
+            Learn More About Us
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Floating Frosted Glass Live Status Card & Scroll Indicator -->
+<div class="mt-space-xl flex flex-col md:flex-row items-start md:items-end justify-between gap-space-lg">
+<!-- Live Status Interactive Card -->
+<div class="w-full max-w-md bg-surface-container/70 backdrop-blur-xl p-space-md rounded-xl shadow-[0_12px_32px_-8px_rgba(5,8,14,0.85)]" id="hero-live-card">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-error"></span>
+</span>
+<span class="font-label-sm text-label-sm font-bold tracking-wider text-error uppercase" id="live-indicator-text">LIVE — Sunday Morning Gathering</span>
+</div>
+<!-- Audio Soundwave Simulation -->
+<div class="flex items-end gap-1 h-4">
+<span class="w-1 bg-primary rounded-full animate-pulse h-2"></span>
+<span class="w-1 bg-primary rounded-full animate-pulse h-4" style="animation-delay: 150ms;"></span>
+<span class="w-1 bg-primary rounded-full animate-pulse h-3" style="animation-delay: 300ms;"></span>
+<span class="w-1 bg-primary rounded-full animate-pulse h-1" style="animation-delay: 450ms;"></span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md" id="live-card-details">
+            Worship and teaching live from the Main Sanctuary. Sermon Series: <span class="text-on-surface font-medium">The Light in Darkness</span>.
+          </p>
+<div class="flex items-center justify-between gap-space-sm pt-space-xs">
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" id="toggle-live-state-btn">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span id="toggle-state-label">Preview Next Service</span>
+</button>
+<a class="inline-flex items-center gap-space-xs bg-primary-container text-on-primary font-label-sm text-label-sm px-space-md py-space-xs rounded-lg hover:bg-primary-fixed transition-colors" href="#teachings-section">
+<span class="material-symbols-outlined text-[16px]">stream</span>
+              Tune In Now
+            </a>
+</div>
+</div>
+<!-- Scroll Down Anchor -->
+<a class="hidden md:flex flex-col items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors pb-2" href="#about-section">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[10px]">Scroll Down</span>
+<span class="material-symbols-outlined text-[20px] animate-bounce">keyboard_arrow_down</span>
+</a>
+</div>
+</div>
+<!-- Persistent Ambient Ticker Bar -->
+<div class="w-full bg-surface-container-lowest/80 backdrop-blur-md py-space-sm overflow-hidden">
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md overflow-x-auto text-nowrap no-scrollbar py-0.5">
+<span class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Sunday Services: 8:45 AM &amp; 10:30 AM
+          </span>
+<span class="text-surface-bright">•</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Watch Live on YouTube Every Sunday</span>
+<span class="text-surface-bright">•</span>
+<span class="text-secondary font-label-sm text-label-sm">Wednesday Midweek Prayer at 7:00 PM</span>
+<span class="text-surface-bright">•</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Youth Gathering Fridays at 6:30 PM</span>
+</div>
+<span class="hidden lg:inline-flex items-center gap-1 text-primary-fixed font-label-sm text-label-sm tracking-wide">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Sanctuary Central &amp; Global Online
+        </span>
+</div>
+</div>
+</section>
+<!-- 2. ABOUT SECTION -->
+<section class="w-full py-space-xl bg-surface" id="about-section">
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin">
+<!-- Overline & Main Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center mb-space-xl">
+<!-- Left Column: Narrative & Mission -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-space-xs">
+<span class="w-8 h-[2px] bg-primary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Our Journey &amp; Calling</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+            Rooted in Faith, Growing in Purpose
+          </h2>
+<p class="font-body-lg text-body-md md:text-body-lg text-on-surface-variant leading-relaxed">
+            Sanctuary is a community of grace, reflection, and restoration. For over three decades, we have remained dedicated to authentic discipleship, deep hospitality, and unhurried worship. Whether you are curious about faith or returning home, your journey matters here.
+          </p>
+<!-- Scripture Callout Accent -->
+<div class="bg-surface-container-low p-space-md rounded-lg pl-space-lg shadow-sm">
+<p class="font-headline-sm text-headline-sm italic text-primary leading-snug mb-space-xs">
+              “Come to me, all who labor and are heavy laden, and I will give you rest.”
+            </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">— Matthew 11:28</span>
+</div>
+<div class="pt-space-sm flex items-center gap-space-lg">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[22px]">diversity_3</span>
+<span class="font-label-md text-label-md font-medium">Intergenerational Worship</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[22px]">volunteer_activism</span>
+<span class="font-label-md text-label-md font-medium">City Outreach &amp; Relief</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Horizontally Scrolling Photo Carousel -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Moments at Sanctuary</span>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Previous Slide" class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-primary transition-colors flex items-center justify-center" id="carousel-prev">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+</button>
+<button aria-label="Next Slide" class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-primary transition-colors flex items-center justify-center" id="carousel-next">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Carousel Track Container -->
+<div class="flex gap-space-md overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar py-2" id="community-carousel-track">
+<!-- Slide 1 -->
+<div class="min-w-[85%] md:min-w-[70%] snap-center rounded-xl overflow-hidden bg-surface-container-low shadow-md group">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Worship leaders singing softly on an acoustic stage in an amber lit dark church sanctuary, warm stringed instruments, quiet reverence and modern architectural wooden backdrop." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPjngxL-dxuurIZuStiw1McXFpin32LA67KD1r5UARf6Az18WFWcSPIH09bWT00uzGnv9-k2PfXnVIzpciO337DnF2TF1QzfSIoJjMzJfchfLISXuLtX1p5GOCkZPRXsDw0KuLIFEJP-ZPlvZZMDrg-tVvAzjffok1MLpEzNfJq0iA4sJk0e_TqnnJix1zLw9YvoQImv86oCHKuoAexPQtCMNx2sYdmZqZ6hp6wU81bzwcKhK-jZO2Dw')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+<div class="p-space-md">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Acoustic Worship</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">Honest Song &amp; Communion</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Simple songs, deep devotion, and communal space to rest in presence.</p>
+</div>
+</div>
+<!-- Slide 2 -->
+<div class="min-w-[85%] md:min-w-[70%] snap-center rounded-xl overflow-hidden bg-surface-container-low shadow-md group">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Young adults and multi-generational families sharing tea, espresso, and warm artisan breads around wooden rustic tables in an ambient sanctuary community hall with soft glowing pendant lamps." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDj_KyHRR3RJqnwLQ8ttn1TbjqGgrgkPEiFqn8SAPHRWqda2tjyOEvWecIKh30ON9cHfjuXiyg5dl5oaFD_h7ImBQJGaE_a8XMX-aSgi3wn1eB3PL5PtZAm7zk9-EbVBsLwkvhtyxc_j_nOjksz8BObH38T-hclHLArKRKAhFXr8njOy8GuIfnC94ZffD7OcQBW9fl0Rs-yBzvWMZJ7kl4PgngI8Z0DDI-scQeblqHiPFNlMHCK3AF1-g')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+<div class="p-space-md">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Hospitality Tables</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">After-Service Table Fellowship</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Friendships forged over shared tables and espresso every Sunday morning.</p>
+</div>
+</div>
+<!-- Slide 3 -->
+<div class="min-w-[85%] md:min-w-[70%] snap-center rounded-xl overflow-hidden bg-surface-container-low shadow-md group">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Church volunteers packing local food pantry parcels and fresh organic vegetables in a warm sunlit community warehouse, smiles and focused teamwork helping neighborhood families." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcZsHYjXSa8BtN0ynmETnSzqcijwieHgYVSQhkQb2MyPPAjLoyYnGU4P3E6S7z4nDRqJPV3z17OOMltX6zE3pYvR6EIgsEPuHZOkWmNZmUdUtlFhAvArqGVWrRAZPMlZwkgk-eMw5SbR_1wj2EPNc6ZzhSdTn_aC0J3zAQFes0KalM5QaiKQIKBfqYCbNgoufOqklFl9-9ZPAqWZIWfNLRM27AXZ9EaVis_BZSA2TvboBx6v_8gCXKYg')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+<div class="p-space-md">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">City Care Outreach</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">Loving Our City Tangibly</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Weekly distribution of meals, cold weather supplies, and family assistance.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Animated Stats Row (Pure Vanilla JS Counter Triggered on Scroll) -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter bg-surface-container-low/80 backdrop-blur-md p-space-lg md:p-space-xl rounded-xl shadow-lg" id="stats-counter-row">
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<div class="flex items-baseline gap-1">
+<span class="counter-val font-display-hero text-headline-lg md:text-display-hero text-primary" data-target="32">0</span>
+<span class="font-headline-sm text-headline-sm text-primary">+</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold mt-1">Years of Ministry</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Founded in grace, 1993</span>
+</div>
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<div class="flex items-baseline gap-1">
+<span class="counter-val font-display-hero text-headline-lg md:text-display-hero text-primary" data-target="48">0</span>
+<span class="font-headline-sm text-headline-sm text-primary"></span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold mt-1">Nations Reached</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Through global mission hubs</span>
+</div>
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<div class="flex items-baseline gap-1">
+<span class="counter-val font-display-hero text-headline-lg md:text-display-hero text-primary" data-target="6400">0</span>
+<span class="font-headline-sm text-headline-sm text-primary">+</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold mt-1">Weekly Members</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">In-person &amp; online families</span>
+</div>
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<div class="flex items-baseline gap-1">
+<span class="counter-val font-display-hero text-headline-lg md:text-display-hero text-primary" data-target="1250">0</span>
+<span class="font-headline-sm text-headline-sm text-primary">+</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold mt-1">Archived Teachings</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Scripture-rich media library</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. EVENTS SECTION -->
+<section class="w-full py-space-xl bg-surface-container-lowest" id="events-section">
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin">
+<!-- Section Header with Gold Accent -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<div class="inline-flex items-center gap-space-xs mb-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Community Gatherings</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+            Join Us This Season
+          </h2>
+</div>
+<!-- Sliding-Indicator Tab Switcher: "This Week" vs. "Upcoming Events" -->
+<div class="flex items-center bg-surface-container-high p-1 rounded-full relative">
+<button class="relative z-10 px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-primary bg-primary-container transition-all" id="events-tab-this-week">
+            This Week
+          </button>
+<button class="relative z-10 px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="events-tab-upcoming">
+            Upcoming Events
+          </button>
+</div>
+</div>
+<!-- View A: "This Week" (Recurring Gatherings) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter transition-opacity duration-300" id="events-view-this-week">
+<!-- Sunday Gatherings -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all shadow-md group">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm bg-primary/20 text-primary px-space-xs py-0.5 rounded uppercase font-bold">Sunday</span>
+<span class="material-symbols-outlined text-primary text-[20px]">church</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Sunday Gatherings</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+              Celebration of scripture, worship, and communion. Kids and Youth programs running simultaneously.
+            </p>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container/50 -mx-space-lg -mb-space-lg p-space-md rounded-b-xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-semibold">8:45 AM &amp; 10:30 AM</span>
+<span class="font-label-sm text-label-sm text-secondary">Main Hall</span>
+</div>
+</div>
+<!-- Tuesday Men's Study -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all shadow-md group">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm bg-surface-bright text-on-surface px-space-xs py-0.5 rounded uppercase font-bold">Tuesday</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">menu_book</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Men's Bible Study</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+              Deep study of the Book of Romans with table discussions, coffee, and prayer partnerships.
+            </p>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container/50 -mx-space-lg -mb-space-lg p-space-md rounded-b-xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-semibold">6:30 AM – 7:45 AM</span>
+<span class="font-label-sm text-label-sm text-secondary">Fireside Room</span>
+</div>
+</div>
+<!-- Wednesday Midweek Prayer -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all shadow-md group">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm bg-surface-bright text-on-surface px-space-xs py-0.5 rounded uppercase font-bold">Wednesday</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">self_improvement</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Midweek Prayer &amp; Rest</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+              Unhurried contemplative evening of guided intercession, silent meditation, and anointing prayer.
+            </p>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container/50 -mx-space-lg -mb-space-lg p-space-md rounded-b-xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-semibold">7:00 PM – 8:15 PM</span>
+<span class="font-label-sm text-label-sm text-secondary">Chapel</span>
+</div>
+</div>
+<!-- Friday Youth Night -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all shadow-md group">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm bg-surface-bright text-on-surface px-space-xs py-0.5 rounded uppercase font-bold">Friday</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">bolt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Sanctuary Youth (6-12th)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+              High-energy games, student worship band, relevant practical teaching, and small group circles.
+            </p>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container/50 -mx-space-lg -mb-space-lg p-space-md rounded-b-xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-semibold">6:30 PM – 9:00 PM</span>
+<span class="font-label-sm text-label-sm text-secondary">The Loft</span>
+</div>
+</div>
+</div>
+<!-- View B: "Upcoming Events" (Grid of Rich Events with Skeleton Loader demo) -->
+<div class="hidden transition-opacity duration-300" id="events-view-upcoming">
+<!-- Interactive trigger button for demonstrating skeleton state -->
+<div class="flex justify-end mb-space-sm">
+<button class="font-label-sm text-label-sm text-primary hover:text-primary-fixed inline-flex items-center gap-1" id="simulate-events-loading">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Replay loading state
+          </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="events-cards-grid">
+<!-- Event 1 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-lg flex flex-col group hover:-translate-y-1 transition-transform duration-300">
+<div class="relative h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Atmospheric worship night in an ancient stone sanctuary with hundreds of candles lit on the altar steps, warm glowing amber beams, people singing in dark mood lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFsuQK2YXZqRZZc9326uGv52XqPeBXsFhVzJDOQxShkmB0Cp6juqmci2jaqHf8uOtg16sWv11B4Jc-vPXtpFktt2QCugikICryn5tFTOPQdiN379-iRhQSCM6iLtnuQidiCW8hNoYwu1ylDv3YrYl-6IEKNI-jtOZK0PX6cPbQ70tFoL4KIMdJ9NVkJaPR_RxnEGe-tM_14RgbWaSy6E5e4WEPTMnChJBnzthRiCpFHvXKnEWsSmihtA')">
+</div>
+<span class="absolute top-space-sm left-space-sm bg-primary-container text-on-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold uppercase">
+                Annual Worship Night
+              </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary">Friday, November 14 • 7:30 PM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 group-hover:text-primary transition-colors">Night of Wonder &amp; Intercession</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  An extended two-hour candlelit liturgy with the Sanctuary Choir and guest instrumentalists.
+                </p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Free Admission</span>
+<a class="font-label-sm text-label-sm text-primary hover:underline font-bold inline-flex items-center gap-1" href="#events-section">
+                  Register &amp; Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-lg flex flex-col group hover:-translate-y-1 transition-transform duration-300">
+<div class="relative h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Misty pine forest mountain retreat cabin in autumn with golden sunlight filtering through evergreen trees, families walking along a gravel woodland path toward a cozy timber lodge." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPDwI4UIN88gJ4XR4iuLO-08ILbgzPXouFs-vSy7MuUNjlFT05JnLujSlxRxd4m5W33LqdWTHTHHVXI8AmGrd-NnvU-FIwoHych8Fd3hbqNvS7TecpHqOdUupXPrAzioFYtDf0KoLZsC6UJf6uiN8mkFvGXigHN8duXbY1D3YUEkRkL48-3tLdLGaA3QPYPsDeWZafk2zg7Fbso1nzARvWZ2OCuq7cI4S_n32SZiRpgVh3mpLMK1NfBg')">
+</div>
+<span class="absolute top-space-sm left-space-sm bg-surface-bright text-on-surface font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold uppercase">
+                Family Fall Retreat
+              </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary">Dec 5–7 • Cascade Pines Lodge</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 group-hover:text-primary transition-colors">Quiet Pines: All-Church Weekend</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  Three days unplugged in the mountains with guided reflection, family dinners, and winter campfires.
+                </p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cabin &amp; Meals pass</span>
+<a class="font-label-sm text-label-sm text-primary hover:underline font-bold inline-flex items-center gap-1" href="#events-section">
+                  Register &amp; Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-lg flex flex-col group hover:-translate-y-1 transition-transform duration-300">
+<div class="relative h-48 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Diverse panel of international leaders and humanitarian workers gathered under warm wooden rafters in an intimate modern seminar setting, notes and maps on tables." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuATWm33mdG3_Ho99xBwz5J5NBmGDDgIZkQ_fkfp2RzJtAiHsleXw-ymQz-Mfdrr1t4WwfBczuEi1PxE2kDj7KsDDTOs8iCnVYb2gl9Sh_iDx7DoeasEJwI1DkG9f9mgATJq-B5R_j4RwSTw2FX8UIGY0gPNbNudCAcEeev31IKc7xzIDLzq7DvNRtpS2-aZsNvkHoMbZyZ8pwNk4PpHL_NQLE7vJ8U71jks1iIOyt4fRQb8MC_WvuSTcQ')">
+</div>
+<span class="absolute top-space-sm left-space-sm bg-surface-bright text-on-surface font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold uppercase">
+                Global Missions Summit
+              </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary">Saturday, January 10 • 9:00 AM</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 group-hover:text-primary transition-colors">Compassion Beyond Borders</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  Hear directly from our global partners in East Africa, Southeast Asia, and local inner-city initiatives.
+                </p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Includes Lunch</span>
+<a class="font-label-sm text-label-sm text-primary hover:underline font-bold inline-flex items-center gap-1" href="#events-section">
+                  Register &amp; Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Skeleton Template Holder (hidden until simulated) -->
+<div class="hidden grid-cols-1 md:grid-cols-3 gap-gutter" id="events-skeleton-grid">
+<div class="bg-surface-container-low rounded-xl overflow-hidden animate-pulse">
+<div class="h-48 bg-surface-container-highest"></div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="h-4 w-28 bg-surface-container-high rounded"></div>
+<div class="h-6 w-3/4 bg-surface-container-high rounded"></div>
+<div class="h-12 w-full bg-surface-container-high rounded"></div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl overflow-hidden animate-pulse">
+<div class="h-48 bg-surface-container-highest"></div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="h-4 w-28 bg-surface-container-high rounded"></div>
+<div class="h-6 w-3/4 bg-surface-container-high rounded"></div>
+<div class="h-12 w-full bg-surface-container-high rounded"></div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl overflow-hidden animate-pulse">
+<div class="h-48 bg-surface-container-highest"></div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="h-4 w-28 bg-surface-container-high rounded"></div>
+<div class="h-6 w-3/4 bg-surface-container-high rounded"></div>
+<div class="h-12 w-full bg-surface-container-high rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. TEACHINGS SECTION -->
+<section class="w-full py-space-xl bg-surface" id="teachings-section">
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin">
+<!-- Section Header -->
+<div class="max-w-2xl mb-space-lg">
+<div class="inline-flex items-center gap-space-xs mb-space-xs">
+<span class="w-8 h-[2px] bg-primary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">The Word &amp; Spirit</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+          Explore Our Sermon Series
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          Immerse yourself in expositional verse-by-verse teachings, seasonal topical meditations, and theological reflections.
+        </p>
+</div>
+<!-- Featured Series Carousel -->
+<div class="mb-space-xl relative">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Current Series &amp; Deep Studies</span>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Previous Series" class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-primary transition-colors flex items-center justify-center" id="teachings-prev">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button aria-label="Next Series" class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-primary transition-colors flex items-center justify-center" id="teachings-next">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-gutter overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar py-2" id="teachings-carousel-track">
+<!-- Series Card 1 -->
+<div class="min-w-[90%] md:min-w-[48%] lg:min-w-[32%] snap-start bg-surface-container-low rounded-xl overflow-hidden shadow-lg group">
+<div class="relative h-52 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Editorial artistic typographic book cover style image showing golden rays piercing dramatic moody storm clouds over dark mountain peaks with gold leaf highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5NPjzMyifaBT_xufbL6WuhXD06XwmHdIiQgXCXSRCkVgOWtqxbbefDb5Xdr2FLSMgr2-PQnEbYgFPg8ltYhu3eUwxLWz46Lovi5sI3YhFth-vWMqXFu02TPxkDH7iRkH6ACix97m__PUNeDmseZRDebXic4aCpfLmvgK5uAO28tM43YC9EXVqNVl7uHDyB-JI3esdNuRrRa3KpnKyR65vwNqLdThUyxgy1FjF_6H2-VfSixa_vk35Tw')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/30 to-transparent"></div>
+<div class="absolute bottom-space-sm left-space-sm right-space-sm flex items-center justify-between">
+<span class="bg-primary-container text-on-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold">Current Series</span>
+<span class="font-label-sm text-label-sm text-on-surface bg-surface/80 backdrop-blur-md px-space-xs py-0.5 rounded">8 Parts</span>
+</div>
+</div>
+<div class="p-space-md">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Pastor Julian Vance • Gospel of John</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 group-hover:text-primary transition-colors">The Gospel of John: Light in Darkness</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                Examining the radical signs of Jesus and the profound claim that true life is found in knowing Him.
+              </p>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Updated Sunday</span>
+<button class="font-label-sm text-label-sm text-primary font-bold hover:underline inline-flex items-center gap-1">
+                  Listen Series <span class="material-symbols-outlined text-[16px]">play_circle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Series Card 2 -->
+<div class="min-w-[90%] md:min-w-[48%] lg:min-w-[32%] snap-start bg-surface-container-low rounded-xl overflow-hidden shadow-lg group">
+<div class="relative h-52 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist architectural arches in an ancient monastery with soft ambient warm candlelight casting geometric shadows against dark slate stone." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_K3gkN9WJR2AjwD4Psa7kw8EPrLlQ5QWh1RN_hasHqUQPK_EwPlaRWUzE3RGdVZvfbMmt7y_QTfIROFi5VC0_ejAylnK9e4wOxRmTnD4KirpNkAhuQuw98vmG84oUfddLPlTCI-bCDByQY4mMW2Yb-eriFSVIcB56zxmQB9vaJDONhZ-7lVEu6sADzZ5cXcGhMkjeBQQ6heyq0KnrmEOFjkS2-TwDUhE0A70BqaTRsilppptWd5zxqg')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/30 to-transparent"></div>
+<div class="absolute bottom-space-sm left-space-sm right-space-sm flex items-center justify-between">
+<span class="bg-surface-bright text-on-surface font-label-sm text-label-sm px-space-xs py-0.5 rounded font-medium">Completed</span>
+<span class="font-label-sm text-label-sm text-on-surface bg-surface/80 backdrop-blur-md px-space-xs py-0.5 rounded">6 Parts</span>
+</div>
+</div>
+<div class="p-space-md">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Pastor Maya Lin • Philippians</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 group-hover:text-primary transition-colors">Unshakeable Peace</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                Discovering steady soul contentment in an anxious and fragmented cultural climate.
+              </p>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Archived 2024</span>
+<button class="font-label-sm text-label-sm text-primary font-bold hover:underline inline-flex items-center gap-1">
+                  Listen Series <span class="material-symbols-outlined text-[16px]">play_circle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Series Card 3 -->
+<div class="min-w-[90%] md:min-w-[48%] lg:min-w-[32%] snap-start bg-surface-container-low rounded-xl overflow-hidden shadow-lg group">
+<div class="relative h-52 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Vintage illuminated manuscript and weathered leather bound bible illuminated by a solitary candle wick on dark walnut desk." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDX5J9NWZAiUbAF-yh43V3oHBpDh4E4b8iKKvy1SnnepKMl6aHL7yoX6JV6LTBrSUEaI21zwr8cEsmKXhCwAxroiZic7AgbmaVkvzu8hVs0nRlcBJUHOEZIhVhOAk_NEilninpvCmB8YYalZfFMcZCiQK2flBEL4VoUyzkfy5vYGZbppaH95MF3S37jdHTcXCRBNl8AmmbzpXUoIAMEZXofpVtsPaYV7KBmsWKX7UX7urZ-42pghhENNg')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/30 to-transparent"></div>
+<div class="absolute bottom-space-sm left-space-sm right-space-sm flex items-center justify-between">
+<span class="bg-surface-bright text-on-surface font-label-sm text-label-sm px-space-xs py-0.5 rounded font-medium">Completed</span>
+<span class="font-label-sm text-label-sm text-on-surface bg-surface/80 backdrop-blur-md px-space-xs py-0.5 rounded">12 Parts</span>
+</div>
+</div>
+<div class="p-space-md">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Teaching Team • Psalms</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 group-hover:text-primary transition-colors">Ancient Prayers for Modern Times</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+                The Hebrew Psalter as our prayer manual for joy, lament, anger, thanksgiving, and quiet contemplation.
+              </p>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Archived 2024</span>
+<button class="font-label-sm text-label-sm text-primary font-bold hover:underline inline-flex items-center gap-1">
+                  Listen Series <span class="material-symbols-outlined text-[16px]">play_circle</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Topic Filter Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-2 mb-space-lg">
+<button class="teaching-filter-pill px-space-md py-1.5 rounded-full font-label-sm text-label-sm text-on-primary bg-primary-container font-semibold transition-all">All Teachings</button>
+<button class="teaching-filter-pill px-space-md py-1.5 rounded-full font-label-sm text-label-sm text-on-surface-variant bg-surface-container hover:text-on-surface transition-all">Gospel &amp; Grace</button>
+<button class="teaching-filter-pill px-space-md py-1.5 rounded-full font-label-sm text-label-sm text-on-surface-variant bg-surface-container hover:text-on-surface transition-all">Spiritual Formation</button>
+<button class="teaching-filter-pill px-space-md py-1.5 rounded-full font-label-sm text-label-sm text-on-surface-variant bg-surface-container hover:text-on-surface transition-all">Family &amp; Marriage</button>
+<button class="teaching-filter-pill px-space-md py-1.5 rounded-full font-label-sm text-label-sm text-on-surface-variant bg-surface-container hover:text-on-surface transition-all">Cultural Apologetics</button>
+</div>
+<!-- Individual Messages List (Interactive Playback triggers) -->
+<div class="space-y-space-sm">
+<!-- Message Item 1 -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-all group shadow-sm">
+<div class="flex items-start md:items-center gap-space-md">
+<button class="w-12 h-12 rounded-full bg-surface-container group-hover:bg-primary-container group-hover:text-on-primary text-primary transition-all flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span>Part 8</span>
+<span>•</span>
+<span class="text-primary font-medium">John 1:1–14</span>
+<span>•</span>
+<span>November 2, 2025</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">The Word Made Flesh: Dwelling In Our Midst</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Speaker: Pastor Julian Vance • Sanctuary Main Service</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pl-16 md:pl-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-space-xs py-1 rounded">42 min</span>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Download Audio">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Download Study Guide">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</button>
+</div>
+</div>
+<!-- Message Item 2 -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-all group shadow-sm">
+<div class="flex items-start md:items-center gap-space-md">
+<button class="w-12 h-12 rounded-full bg-surface-container group-hover:bg-primary-container group-hover:text-on-primary text-primary transition-all flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span>Part 7</span>
+<span>•</span>
+<span class="text-primary font-medium">John 15:1–11</span>
+<span>•</span>
+<span>October 26, 2025</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Abiding in the True Vine</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Speaker: Pastor Maya Lin • Sanctuary Main Service</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pl-16 md:pl-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-space-xs py-1 rounded">38 min</span>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Download Audio">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Download Study Guide">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</button>
+</div>
+</div>
+<!-- Message Item 3 -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-all group shadow-sm">
+<div class="flex items-start md:items-center gap-space-md">
+<button class="w-12 h-12 rounded-full bg-surface-container group-hover:bg-primary-container group-hover:text-on-primary text-primary transition-all flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span>Special Gathering</span>
+<span>•</span>
+<span class="text-primary font-medium">Colossians 3:12–17</span>
+<span>•</span>
+<span>October 19, 2025</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Clothed in Mercy: The Anatomy of Unity</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Speaker: Dr. Richard Vance • Guest Communion Sunday</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pl-16 md:pl-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-space-xs py-1 rounded">46 min</span>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Download Audio">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Download Study Guide">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. ARCHIVES & RESOURCE LIBRARY -->
+<section class="w-full py-space-xl bg-surface-container-lowest" id="archives-section">
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin">
+<!-- Archives Title & Debounced Search Bar with Keyboard shortcut hint -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<div class="inline-flex items-center gap-space-xs mb-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Media Archives &amp; Study</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+            The Living Archives
+          </h2>
+</div>
+<!-- Modern Search Input with Suggestions Container -->
+<div class="relative w-full md:w-96">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant absolute left-space-sm pointer-events-none">search</span>
+<input class="w-full bg-surface-container-low text-on-surface pl-10 pr-20 py-2.5 rounded-lg text-body-sm font-body-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="archive-search-input" placeholder="Search teachings, topics, scriptures..." type="text"/>
+<div class="absolute right-2 flex items-center gap-1">
+<button class="hidden text-on-surface-variant hover:text-on-surface p-1" id="archive-clear-btn">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+<kbd class="hidden md:inline-block font-label-sm text-[10px] bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface-variant">⌘K</kbd>
+</div>
+</div>
+<!-- Animated Search Suggestions Dropdown -->
+<div class="hidden absolute top-full left-0 right-0 mt-1 bg-surface-container-high border-none rounded-xl p-space-sm shadow-2xl z-30" id="search-suggestions-dropdown">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block px-space-xs mb-1">Popular Queries</span>
+<div class="flex flex-wrap gap-1">
+<button class="search-tag-chip px-2.5 py-1 rounded bg-surface-container text-on-surface text-label-sm font-label-sm hover:text-primary hover:bg-surface-bright transition-colors">Sermon on the Mount</button>
+<button class="search-tag-chip px-2.5 py-1 rounded bg-surface-container text-on-surface text-label-sm font-label-sm hover:text-primary hover:bg-surface-bright transition-colors">Romans 8</button>
+<button class="search-tag-chip px-2.5 py-1 rounded bg-surface-container text-on-surface text-label-sm font-label-sm hover:text-primary hover:bg-surface-bright transition-colors">Forgiveness &amp; Rest</button>
+<button class="search-tag-chip px-2.5 py-1 rounded bg-surface-container text-on-surface text-label-sm font-label-sm hover:text-primary hover:bg-surface-bright transition-colors">Grief &amp; Hope</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Resource Format Tabs Switcher -->
+<div class="flex items-center justify-between border-b border-surface-container-high pb-space-sm mb-space-lg">
+<div class="flex items-center gap-space-md">
+<button class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-2 -mb-[10px]" id="res-tab-all">All Formats</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors pb-2" id="res-tab-audio">Audio Podcasts</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors pb-2" id="res-tab-guides">Ebooks &amp; Study Guides</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors pb-2" id="res-tab-video">Video Playlists</button>
+</div>
+<span class="font-label-sm text-label-sm text-secondary hidden sm:inline-block" id="resource-count-badge">Showing 6 verified resources</span>
+</div>
+<!-- Resource Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="resources-grid">
+<!-- Resource 1: Audio Podcast -->
+<div class="resource-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all group shadow-md" data-title="Deep Waters Contemplative Liturgy Romans" data-type="audio">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-2 py-0.5 rounded font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">headphones</span> 48 min Audio
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ep. 114</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mt-2">Deep Waters: Quiet Prayer in Chaotic Times</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">A guided contemplative meditation through Romans 8:26 with silence, scripture reading, and ambient string accompaniment.</p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between border-t border-surface-container-high/50">
+<span class="font-label-sm text-label-sm text-secondary">Pastor Julian Vance</span>
+<button class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 hover:underline">
+              Listen Now <span class="material-symbols-outlined text-[16px]">play_circle</span>
+</button>
+</div>
+</div>
+<!-- Resource 2: PDF Guide -->
+<div class="resource-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all group shadow-md" data-title="Sabbath Rhythms Family Liturgy Ebook PDF" data-type="guides">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-2 py-0.5 rounded font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">menu_book</span> 32 Pages PDF
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Field Guide</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mt-2">Sabbath Rhythms: A Family Practice Companion</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Practical 4-week framework for unplugging screens, lighting Sabbath candles, and establishing joyful rest routines at home.</p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between border-t border-surface-container-high/50">
+<span class="font-label-sm text-label-sm text-secondary">Sanctuary Formation Team</span>
+<button class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 hover:underline">
+              Download PDF <span class="material-symbols-outlined text-[16px]">download</span>
+</button>
+</div>
+</div>
+<!-- Resource 3: Video -->
+<div class="resource-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all group shadow-md" data-title="The Heart of Worship masterclass video 4k" data-type="video">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-error bg-error-container/20 px-2 py-0.5 rounded font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">play_circle</span> 4K Video
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Masterclass</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mt-2">The Theology of Modern Sacred Art</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">High-definition roundtable documentary exploring sacred architecture, acoustic resonance, and sacred storytelling.</p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between border-t border-surface-container-high/50">
+<span class="font-label-sm text-label-sm text-secondary">Arts &amp; Worship Guild</span>
+<button class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 hover:underline">
+              Watch Stream <span class="material-symbols-outlined text-[16px]">smart_display</span>
+</button>
+</div>
+</div>
+<!-- Resource 4: PDF Guide -->
+<div class="resource-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all group shadow-md" data-title="Advent Reflection Journal Devotional Christmas" data-type="guides">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-2 py-0.5 rounded font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">menu_book</span> 48 Pages PDF
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Devotional</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mt-2">Waiting in Hope: The 2025 Advent Journal</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Daily scriptures, poetry, and prayer prompts spanning the four weeks of anticipation leading to Christmas Eve.</p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between border-t border-surface-container-high/50">
+<span class="font-label-sm text-label-sm text-secondary">Pastoral Staff</span>
+<button class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 hover:underline">
+              Download PDF <span class="material-symbols-outlined text-[16px]">download</span>
+</button>
+</div>
+</div>
+<!-- Resource 5: Audio -->
+<div class="resource-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all group shadow-md" data-title="Grief Lament Hope podcast" data-type="audio">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-2 py-0.5 rounded font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">headphones</span> 55 min Audio
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Symposium</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mt-2">Holding Grief &amp; Hope in the Same Breath</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">A compassionate pastoral conversation with licensed counselors on navigating bereavement, sudden loss, and healing.</p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between border-t border-surface-container-high/50">
+<span class="font-label-sm text-label-sm text-secondary">Pastor Maya &amp; Dr. Claire Ramos</span>
+<button class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 hover:underline">
+              Listen Now <span class="material-symbols-outlined text-[16px]">play_circle</span>
+</button>
+</div>
+</div>
+<!-- Resource 6: Video -->
+<div class="resource-card bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between hover:bg-surface-container transition-all group shadow-md" data-title="Sermon on the Mount Beatitudes visual lecture" data-type="video">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-error bg-error-container/20 px-2 py-0.5 rounded font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">play_circle</span> 4K Video
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Archive Series</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors mt-2">The Upside-Down Kingdom: Matthew 5</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Full 6-part visual study breaking down the Beatitudes through historical geography and archaeological insights.</p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between border-t border-surface-container-high/50">
+<span class="font-label-sm text-label-sm text-secondary">Julian Vance</span>
+<button class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 hover:underline">
+              Watch Stream <span class="material-symbols-outlined text-[16px]">smart_display</span>
+</button>
+</div>
+</div>
+</div>
+<!-- No Results State -->
+<div class="hidden py-space-xl text-center" id="archives-empty-state">
+<span class="material-symbols-outlined text-[48px] text-on-surface-variant">search_off</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-2">No matching teachings or resources</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Try another keyword or reset the filter tags above.</p>
+</div>
+</div>
+</section>
+<!-- 6. NEWSLETTER & GRACE INVITATION FOOTER BANNER -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin">
+<div class="bg-gradient-to-r from-surface-container-low via-surface-container to-surface-container-low p-space-lg md:p-space-xl rounded-2xl relative overflow-hidden shadow-2xl">
+<!-- Ambient gold glow element -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl">
+<div class="inline-flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">mark_email_read</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Weekly Pastoral Letter</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-space-xs">
+            Reflections for the Weary &amp; Curious
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+            Every Thursday morning, we send a short scripture reflection, upcoming gathering details, and recommended reading straight from our pastoral elders.
+          </p>
+<!-- Interactive Newsletter Form -->
+<form class="flex flex-col sm:flex-row gap-space-xs max-w-lg" id="pastoral-newsletter-form">
+<input class="w-full bg-surface-container-lowest border-none px-space-md py-3 rounded-lg text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="newsletter-email" placeholder="Enter your email address" required="" type="email"/>
+<button class="bg-primary-container text-on-primary font-label-md text-label-md px-space-xl py-3 rounded-lg hover:bg-primary-fixed transition-all font-semibold shrink-0 shadow-[0_0_16px_rgba(240,185,74,0.25)] flex items-center justify-center gap-1" type="submit">
+              Subscribe Free
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</form>
+<!-- Smooth Form Success Feedback Notification -->
+<div class="hidden mt-space-sm p-space-sm bg-surface-container-high rounded-lg text-primary font-body-sm text-body-sm flex items-center gap-space-xs" id="newsletter-success-msg">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>Thank you for subscribing to Sanctuary Weekly. Peace be with you.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // 1. STATS COUNTER ANIMATION ON SCROLL
+  const statsRow = document.getElementById('stats-counter-row');
+  const counterElements = document.querySelectorAll('.counter-val');
+  let hasCounted = false;
+
+  const animateCounters = () => {
+    counterElements.forEach(el => {
+      const target = +el.getAttribute('data-target');
+      const duration = 1800; // ms
+      const startTime = performance.now();
+
+      const updateCount = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease-out cubic
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const currentVal = Math.floor(easeProgress * target);
+
+        el.innerText = target > 1000 ? currentVal.toLocaleString() : currentVal;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          el.innerText = target > 1000 ? target.toLocaleString() : target;
+        }
+      };
+
+      requestAnimationFrame(updateCount);
+    });
+  };
+
+  if ('IntersectionObserver' in window && statsRow) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasCounted) {
+          hasCounted = true;
+          animateCounters();
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(statsRow);
+  } else {
+    animateCounters();
+  }
+
+  // 2. HERO LIVE CARD DUAL-STATE TOGGLE
+  const toggleLiveBtn = document.getElementById('toggle-live-state-btn');
+  const liveIndicator = document.getElementById('live-indicator-text');
+  const liveDetails = document.getElementById('live-card-details');
+  const toggleLabel = document.getElementById('toggle-state-label');
+  let isLiveNow = true;
+
+  if (toggleLiveBtn) {
+    toggleLiveBtn.addEventListener('click', () => {
+      isLiveNow = !isLiveNow;
+      if (isLiveNow) {
+        liveIndicator.textContent = "LIVE — Sunday Morning Gathering";
+        liveIndicator.className = "font-label-sm text-label-sm font-bold tracking-wider text-error uppercase";
+        liveDetails.innerHTML = "Worship and teaching live from the Main Sanctuary. Sermon Series: <span class='text-on-surface font-medium'>The Light in Darkness</span>.";
+        toggleLabel.textContent = "Preview Next Service";
+      } else {
+        liveIndicator.textContent = "Upcoming Service: Sunday 8:45 AM";
+        liveIndicator.className = "font-label-sm text-label-sm font-bold tracking-wider text-primary uppercase";
+        liveDetails.innerHTML = "Next gathering begins in <span class='text-primary font-bold'>2 Days, 14 Hours</span>. Join us in person or right here online.";
+        toggleLabel.textContent = "Preview Active Stream";
+      }
+    });
+  }
+
+  // 3. ABOUT COMMUNITY CAROUSEL NAVIGATION
+  const carouselTrack = document.getElementById('community-carousel-track');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  if (carouselTrack && prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      carouselTrack.scrollBy({ left: -340, behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+      carouselTrack.scrollBy({ left: 340, behavior: 'smooth' });
+    });
+  }
+
+  // 4. TEACHINGS SERIES CAROUSEL NAVIGATION
+  const teachingsTrack = document.getElementById('teachings-carousel-track');
+  const teachPrev = document.getElementById('teachings-prev');
+  const teachNext = document.getElementById('teachings-next');
+
+  if (teachingsTrack && teachPrev && teachNext) {
+    teachPrev.addEventListener('click', () => {
+      teachingsTrack.scrollBy({ left: -380, behavior: 'smooth' });
+    });
+    teachNext.addEventListener('click', () => {
+      teachingsTrack.scrollBy({ left: 380, behavior: 'smooth' });
+    });
+  }
+
+  // 5. EVENTS TAB SWITCHER & SKELETON DEMO
+  const tabThisWeek = document.getElementById('events-tab-this-week');
+  const tabUpcoming = document.getElementById('events-tab-upcoming');
+  const viewThisWeek = document.getElementById('events-view-this-week');
+  const viewUpcoming = document.getElementById('events-view-upcoming');
+  const simulateLoadingBtn = document.getElementById('simulate-events-loading');
+  const eventsCardsGrid = document.getElementById('events-cards-grid');
+  const eventsSkeletonGrid = document.getElementById('events-skeleton-grid');
+
+  if (tabThisWeek && tabUpcoming && viewThisWeek && viewUpcoming) {
+    tabThisWeek.addEventListener('click', () => {
+      tabThisWeek.className = "relative z-10 px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-primary bg-primary-container transition-all";
+      tabUpcoming.className = "relative z-10 px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all";
+      viewThisWeek.classList.remove('hidden');
+      viewUpcoming.classList.add('hidden');
+    });
+
+    tabUpcoming.addEventListener('click', () => {
+      tabUpcoming.className = "relative z-10 px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-primary bg-primary-container transition-all";
+      tabThisWeek.className = "relative z-10 px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all";
+      viewThisWeek.classList.add('hidden');
+      viewUpcoming.classList.remove('hidden');
+    });
+  }
+
+  if (simulateLoadingBtn && eventsCardsGrid && eventsSkeletonGrid) {
+    simulateLoadingBtn.addEventListener('click', () => {
+      eventsCardsGrid.classList.add('hidden');
+      eventsSkeletonGrid.classList.remove('hidden');
+      eventsSkeletonGrid.classList.add('grid');
+
+      setTimeout(() => {
+        eventsSkeletonGrid.classList.add('hidden');
+        eventsSkeletonGrid.classList.remove('grid');
+        eventsCardsGrid.classList.remove('hidden');
+      }, 700);
+    });
+  }
+
+  // 6. TEACHINGS PILL FILTER
+  const teachingPills = document.querySelectorAll('.teaching-filter-pill');
+  teachingPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      teachingPills.forEach(p => {
+        p.className = "teaching-filter-pill px-space-md py-1.5 rounded-full font-label-sm text-label-sm text-on-surface-variant bg-surface-container hover:text-on-surface transition-all";
+      });
+      pill.className = "teaching-filter-pill px-space-md py-1.5 rounded-full font-label-sm text-label-sm text-on-primary bg-primary-container font-semibold transition-all";
+    });
+  });
+
+  // 7. ARCHIVES SEARCH & RESOURCE TAB FILTERING
+  const searchInput = document.getElementById('archive-search-input');
+  const clearSearchBtn = document.getElementById('archive-clear-btn');
+  const suggestionsBox = document.getElementById('search-suggestions-dropdown');
+  const searchChips = document.querySelectorAll('.search-tag-chip');
+  const resourceCards = document.querySelectorAll('.resource-card');
+  const emptyState = document.getElementById('archives-empty-state');
+  const countBadge = document.getElementById('resource-count-badge');
+
+  let activeResourceType = 'all';
+
+  // Toggle Suggestions
+  if (searchInput && suggestionsBox) {
+    searchInput.addEventListener('focus', () => {
+      suggestionsBox.classList.remove('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+        suggestionsBox.classList.add('hidden');
+      }
+    });
+
+    // Populate search from quick tags
+    searchChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        searchInput.value = chip.textContent.trim();
+        suggestionsBox.classList.add('hidden');
+        filterResources();
+        if (clearSearchBtn) clearSearchBtn.classList.remove('hidden');
+      });
+    });
+
+    // Keyboard shortcut CMD+K
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        searchInput.focus();
+      }
+    });
+
+    // Debounced search
+    let debounceTimer;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      if (clearSearchBtn) {
+        if (searchInput.value.length > 0) {
+          clearSearchBtn.classList.remove('hidden');
+        } else {
+          clearSearchBtn.classList.add('hidden');
+        }
+      }
+      debounceTimer = setTimeout(() => {
+        filterResources();
+      }, 180);
+    });
+
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearSearchBtn.classList.add('hidden');
+        filterResources();
+        searchInput.focus();
+      });
+    }
+  }
+
+  // Format Tabs
+  const resTabs = [
+    { el: document.getElementById('res-tab-all'), type: 'all' },
+    { el: document.getElementById('res-tab-audio'), type: 'audio' },
+    { el: document.getElementById('res-tab-guides'), type: 'guides' },
+    { el: document.getElementById('res-tab-video'), type: 'video' }
+  ];
+
+  resTabs.forEach(tab => {
+    if (tab.el) {
+      tab.el.addEventListener('click', () => {
+        resTabs.forEach(t => {
+          t.el.className = "font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors pb-2";
+        });
+        tab.el.className = "font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-2 -mb-[10px]";
+        activeResourceType = tab.type;
+        filterResources();
+      });
+    }
+  });
+
+  function filterResources() {
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    let visibleCount = 0;
+
+    resourceCards.forEach(card => {
+      const type = card.getAttribute('data-type');
+      const title = card.getAttribute('data-title').toLowerCase();
+      const content = card.textContent.toLowerCase();
+
+      const matchesType = activeResourceType === 'all' || type === activeResourceType;
+      const matchesQuery = query === '' || title.includes(query) || content.includes(query);
+
+      if (matchesType && matchesQuery) {
+        card.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    if (countBadge) {
+      countBadge.textContent = `Showing ${visibleCount} verified resources`;
+    }
+
+    if (emptyState) {
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+      } else {
+        emptyState.classList.add('hidden');
+      }
+    }
+  }
+
+  // 8. NEWSLETTER SUBMISSION INTERACTIVITY
+  const newsletterForm = document.getElementById('pastoral-newsletter-form');
+  const newsletterSuccess = document.getElementById('newsletter-success-msg');
+
+  if (newsletterForm && newsletterSuccess) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      newsletterSuccess.classList.remove('hidden');
+      newsletterForm.reset();
+      setTimeout(() => {
+        newsletterSuccess.classList.add('hidden');
+      }, 5000);
+    });
+  }
+</script></main><aside class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/90 backdrop-blur-md border-t border-outline-variant/30 py-space-xs px-margin-sm md:px-margin"><div class="max-w-[1320px] mx-auto flex items-center justify-between gap-space-md overflow-x-auto text-nowrap"><div class="flex items-center gap-space-md font-label-sm text-label-sm"><span class="inline-flex items-center gap-space-xs bg-error-container text-on-error-container px-space-xs py-0.5 rounded-DEFAULT font-bold tracking-wider uppercase text-[10px]"><span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>LIVE SUNDAYS</span><span class="text-primary font-medium">8:45 AM &amp; 10:30 AM</span><span class="text-outline-variant">•</span><span class="text-on-surface-variant">Watch Live on YouTube Every Sunday</span><span class="text-outline-variant">•</span><span class="text-on-surface-variant">Prayer Line Available 24/7 (800) 555-0199</span><span class="text-outline-variant">•</span><span class="text-secondary">Midweek Bible Study Wednesdays at 7:00 PM</span></div><a class="hidden sm:inline-flex items-center gap-space-xs text-primary font-label-sm text-label-sm hover:underline" data-path="watch-online" href="#"><span class="material-symbols-outlined text-[16px]">live_tv</span>Join Stream</a></div></aside><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 pt-space-xl pb-24"><div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-md"><img alt="Sanctuary Church Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X57w6nZeVBU5UaSvrvTz_1XpMzXkn4VMiidV9264OhV1eDMQ8O8fR-zTP9wn5AtP6tIH9PNbS1nBdd6nLVuRPxrAH7v8h0o88B0DTD07UQ0fsC1Qee4S5d0QjcGNGoae_Jvg0IBk205Qcla748y_27OZfI19fHBJxZSCVNCHePzjKN8tQNvz3ynqDnmzqsPNXf7GAc9pfa7ZcytBiW19Fki2lXNipFu_QtQIinW9mdEEEpI4QzGDJgw3wu"/><span class="font-headline-sm text-headline-sm text-on-surface">Sanctuary</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mt-space-xs">A sacred space of grace, truth, and community. Rooted in timeless faith, reaching every heart.</p></div><div class="flex flex-col gap-space-xs"><span class="font-label-md text-label-md text-primary uppercase tracking-wider mb-space-xs">Quick Links</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About Our Journey</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="events" href="#">Events Calendar</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="teachings" href="#">Teachings Library</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="archives" href="#">Media Archives</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-md text-label-md text-primary uppercase tracking-wider mb-space-xs">Get Involved</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="serve-teams" href="#">Serve Teams</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="small-groups" href="#">Small Groups</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="mentorship" href="#">Mentorship</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="give" href="#">Generosity &amp; Giving</a></div><div class="flex flex-col gap-space-md"><span class="font-label-md text-label-md text-primary uppercase tracking-wider">Connect</span><div class="flex items-center gap-space-md"><a class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" data-path="watch-online" href="#"><span class="material-symbols-outlined text-[18px]">play_circle</span></a><a class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" data-path="social" href="#"><span class="material-symbols-outlined text-[18px]">photo_camera</span></a><a class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" data-path="connect" href="#"><span class="material-symbols-outlined text-[18px]">groups</span></a><a class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" data-path="podcasts" href="#"><span class="material-symbols-outlined text-[18px]">podcasts</span></a></div><div class="flex flex-col gap-space-xs mt-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant">Receive weekly reflections</span><div class="flex items-center gap-space-xs"><input class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg px-space-sm py-space-xs font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:border-primary" placeholder="Your email address" type="email"/><button class="bg-primary-container text-on-primary font-label-sm text-label-sm px-space-md py-space-xs rounded-lg hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></div></div></div><div class="max-w-[1320px] mx-auto px-margin-sm md:px-margin pt-space-lg border-t border-outline-variant/10 flex flex-col md:flex-row items-center justify-between gap-space-md text-center md:text-left"><p class="font-label-sm text-label-sm text-secondary">Sundays at 8:45 AM &amp; 10:30 AM • Wednesdays at 7:00 PM</p><p class="font-label-sm text-label-sm text-on-surface-variant">© 2025 Sanctuary Church &amp; Ministries. All rights reserved.</p></div></footer></body></html>

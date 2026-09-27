@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "res.cloudinary.com",
       },
+      {
+        protocol: "https",
+        hostname: "gcftchurch.org",
+        pathname: "/wp-content/uploads/**",
+      },
     ],
   },
 };
