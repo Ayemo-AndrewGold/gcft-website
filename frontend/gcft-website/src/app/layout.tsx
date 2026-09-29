@@ -1,23 +1,30 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Geist, Geist_Mono, Newsreader } from "next/font/google";
 import Header from "@/components/Header";
 import Footer, { ServiceBar } from "@/components/Footer";
 import "./globals.css";
 
-/* Playfair Display — editorial serif for headlines & scripture */
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+/* Geist — display & UI. Precise, neutral, highly legible. */
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
-/* Plus Jakarta Sans — body, labels, and UI */
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+/* Newsreader — editorial serif for scripture and italic accents. */
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  weight: ["300", "400", "500"],
+  display: "swap",
+});
+
+/* Geist Mono — indices, metadata and small labels. */
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -34,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${jakarta.variable} h-full antialiased`}
+      className={`${geist.variable} ${newsreader.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
         {/* Icon font used throughout the design */}

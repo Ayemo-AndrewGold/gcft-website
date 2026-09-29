@@ -11,8 +11,12 @@ import { enquiryTopics } from "@/lib/pages";
 import { Icon } from "../ui";
 
 const inputCls =
-  "w-full rounded-lg border border-on-surface/15 bg-surface-container-lowest/60 px-space-md py-3 text-body-md text-on-surface placeholder:text-[#8e95a5] transition-colors focus:border-primary-container focus:ring-1 focus:ring-primary-container/35 focus:outline-none";
-const labelCls = "mb-1.5 block text-label-sm uppercase tracking-wider text-on-surface-variant";
+  "h-12 w-full rounded-full border border-hairline-strong bg-transparent px-5 text-[15px] text-on-surface placeholder:text-on-surface-variant/70 transition-colors focus:border-white/50 focus:outline-none";
+const areaCls =
+  "w-full rounded-2xl border border-hairline-strong bg-transparent px-5 py-4 text-[15px] text-on-surface placeholder:text-on-surface-variant/70 transition-colors focus:border-white/50 focus:outline-none";
+const labelCls = "eyebrow mb-2 block text-on-surface-variant";
+const btnCls =
+  "inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-primary-container px-6 text-[15px] font-medium text-on-primary transition-colors hover:bg-primary-fixed";
 
 function send(subject: string, body: string) {
   window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -80,7 +84,7 @@ export function EnquiryForm() {
         <label htmlFor="message" className={labelCls}>
           Message
         </label>
-        <textarea id="message" name="message" required rows={6} className={`${inputCls} resize-y`} placeholder="How can we help?" />
+        <textarea id="message" name="message" required rows={6} className={`${areaCls} resize-y`} placeholder="How can we help?" />
       </div>
       <div className="flex flex-col gap-space-sm sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
         <p role="status" className={`text-body-sm ${error ? "text-error" : "text-on-surface-variant"}`}>
@@ -88,7 +92,7 @@ export function EnquiryForm() {
         </p>
         <button
           type="submit"
-          className="inline-flex shrink-0 items-center justify-center gap-space-xs rounded-lg bg-primary-container px-space-xl py-3 text-label-md uppercase tracking-wider text-on-primary shadow-glow transition-all hover:bg-primary-fixed"
+          className={btnCls}
         >
           Send Message <Icon name="send" size={18} />
         </button>
@@ -118,7 +122,7 @@ export function NewsletterSignup({ cta = "Subscribe", compact = false }: { cta?:
         <input name="email" type="email" required autoComplete="email" aria-label="Email address" placeholder="Email address" className={inputCls} />
         <button
           type="submit"
-          className="inline-flex shrink-0 items-center justify-center gap-space-xs rounded-lg bg-primary-container px-space-xl py-3 text-label-md uppercase tracking-wider text-on-primary shadow-glow transition-all hover:bg-primary-fixed"
+          className={btnCls}
         >
           {cta} <Icon name="arrow_forward" size={18} />
         </button>

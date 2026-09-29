@@ -1,20 +1,21 @@
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import EventsSection from "@/components/EventsSection";
-import TeachingsSection from "@/components/TeachingsSection";
-import ArchivesSection from "@/components/ArchivesSection";
-import ContactSection from "@/components/ContactSection";
+import Hero from "@/components/home/Hero";
+import { Gatherings, Library, NewsletterBand, Pulpit, Scripture, Statement, Visit } from "@/components/home/Sections";
 import { site } from "@/lib/content";
+import { getLatestVideos } from "@/lib/youtube";
 
-export default function Home() {
+export default async function Home() {
+  const videos = await getLatestVideos(5);
+
   return (
     <main className="w-full bg-surface">
-      <HeroSection videoSrc={site.heroVideo} />
-      <AboutSection />
-      <EventsSection />
-      <TeachingsSection />
-      <ArchivesSection />
-      <ContactSection />
+      <Hero videoSrc={site.heroVideo} />
+      <Statement />
+      <Gatherings />
+      <Scripture />
+      <Pulpit videos={videos} />
+      <Library />
+      <NewsletterBand />
+      <Visit />
     </main>
   );
 }

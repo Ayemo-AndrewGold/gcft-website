@@ -42,11 +42,12 @@ export function Logo({
   );
 }
 
-/** Small filled "play" tile used inside the Watch Live button. */
+/** Pulsing live dot used inside the Watch Live button. */
 function PlayTile() {
   return (
-    <span className="flex h-[18px] w-[18px] items-center justify-center rounded-[4px] bg-primary-container text-on-primary">
-      <Icon name="play_arrow" size={14} fill />
+    <span className="relative inline-flex h-2 w-2" aria-hidden="true">
+      <span className="absolute inset-0 animate-ping rounded-full bg-error opacity-60" />
+      <span className="relative inline-flex h-2 w-2 rounded-full bg-error" />
     </span>
   );
 }
@@ -124,24 +125,28 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
   }, [open]);
 
   const solid = scrolled || open;
-  const utilityCls = `transition-colors ${solid ? "hover:text-surface" : "hover:text-white"}`;
+  const utilityCls = "transition-colors hover:text-white";
   const linkCls = (isActive: boolean) =>
-    `text-[14px] font-medium transition-colors xl:text-[15px] ${
-      isActive ? "text-primary-container" : "text-[#e5e7eb] hover:text-primary-container"
+    `relative text-[14px] tracking-[-0.005em] transition-colors duration-300 ${
+      isActive
+        ? "text-white after:absolute after:-bottom-2.5 after:left-1/2 after:h-1 after:w-1 after:-translate-x-1/2 after:rounded-full after:bg-primary-container"
+        : "text-white/65 hover:text-white"
     }`;
+  const mobileCls = (isActive: boolean) =>
+    `text-[26px] font-medium tracking-[-0.03em] transition-colors ${isActive ? "text-white" : "text-white/60 hover:text-white"}`;
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 ${className}`}>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500 ${
+        solid ? "border-b border-hairline bg-surface/80 backdrop-blur-xl backdrop-saturate-150" : "border-b border-transparent"
+      } ${className}`}
+    >
       {/* Utility bar (tablet & up) */}
       <div
-        className={`hidden border-b transition-colors duration-300 md:block ${
-          solid ? "border-white/10 bg-[#f3f1ec]/95" : "border-white/10 bg-transparent"
-        }`}
+        className="hidden border-b border-hairline md:block"
       >
         <div
-          className={`mx-auto flex h-10 max-w-shell items-center justify-between px-margin-sm text-[10px] font-bold uppercase tracking-widest transition-colors duration-300 md:px-10 lg:px-margin ${
-            solid ? "text-[#475569]" : "text-white/75"
-          }`}
+          className="eyebrow mx-auto flex h-10 max-w-shell items-center justify-between px-margin-sm text-[10.5px] text-white/55 md:px-10 lg:px-margin"
         >
           <div className="flex gap-6">
             {utilityLinks.left.map((l) => (
@@ -166,16 +171,12 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
 
       {/* Main bar */}
       <div
-        className={`border-b transition-[background-color,box-shadow,border-color] duration-300 ${
-          solid
-            ? "border-white/10 bg-surface/95 shadow-float backdrop-blur-xl"
-            : "border-transparent bg-transparent shadow-none"
-        }`}
+        className="relative"
       >
         <div className="mx-auto flex h-[72px] max-w-shell items-center justify-between gap-gutter px-margin-sm md:h-[88px] md:px-10 lg:px-margin">
           <Logo preload />
 
-          <nav className="hidden items-center gap-5 lg:flex xl:gap-8" aria-label="Primary">
+          <nav className="hidden items-center gap-6 lg:flex xl:gap-9" aria-label="Primary">
             {navLinks.map((link) => {
               const isActive = active === link.href;
               if (!link.children?.length) {
@@ -201,7 +202,7 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
                     className={`inline-flex items-center gap-0.5 ${linkCls(isActive)}`}
                   >
                     {link.name}
-                    <Icon name="expand_more" size={18} className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                    <Icon name="expand_more" size={16} className={`opacity-60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
                   </button>
 
                   {/* Dropdown panel (pt bridges the hover gap) */}
@@ -210,7 +211,7 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
                       isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"
                     }`}
                   >
-                    <ul className="glass-2 overflow-hidden rounded-xl py-space-xs shadow-float">
+                    <ul className="glass-2 overflow-hidden rounded-2xl p-1.5 shadow-float">
                       {link.children.map((child) => {
                         const childActive = pathname === child.href;
                         return (
@@ -219,15 +220,13 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
                               href={child.href}
                               onClick={() => setDropdown(null)}
                               aria-current={childActive ? "page" : undefined}
-                              className={`group flex items-center justify-between gap-space-sm border-l-2 px-space-md py-3 transition-colors hover:bg-white/[0.04] ${
-                                childActive ? "border-primary-container" : "border-transparent"
+                              className={`group flex items-center justify-between gap-space-sm rounded-xl px-4 py-3 transition-colors hover:bg-white/[0.05] ${
+                                childActive ? "bg-white/[0.04]" : ""
                               }`}
                             >
                               <span className="min-w-0">
                                 <span
-                                  className={`block text-label-md uppercase tracking-wider transition-colors group-hover:text-primary-container ${
-                                    childActive ? "text-primary-container" : "text-on-surface"
-                                  }`}
+                                  className={`flex items-center gap-2 text-[15px] tracking-[-0.01em] text-on-surface`}
                                 >
                                   {child.name}
                                 </span>
@@ -256,14 +255,14 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
           <div className="hidden items-center gap-space-sm lg:flex">
             <Link
               href="/live"
-              className="inline-flex items-center gap-2 rounded-lg border border-primary-container px-4 py-2 text-[14px] font-bold text-white transition-colors hover:bg-primary-container/10"
+              className="inline-flex h-10 items-center gap-2.5 rounded-full border border-white/20 px-4 text-[14px] text-white transition-colors hover:border-white/50"
             >
-              Watch Live
               <PlayTile />
+              Watch live
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-lg bg-primary-container px-5 py-2.5 text-[14px] font-semibold text-on-primary shadow-glow transition-all hover:bg-primary-fixed"
+              className="inline-flex h-10 items-center rounded-full bg-primary-container px-5 text-[14px] font-medium text-on-primary transition-colors hover:bg-primary-fixed"
             >
               Connect
             </Link>
@@ -285,7 +284,7 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
       {/* Mobile menu panel */}
       <div
         id="mobile-menu"
-        className={`fixed inset-x-0 bottom-0 top-[72px] overflow-y-auto bg-surface-container-low transition-opacity duration-300 md:top-[128px] lg:hidden ${
+        className={`fixed inset-x-0 bottom-0 top-[72px] overflow-y-auto bg-surface transition-opacity duration-300 md:top-[128px] lg:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
@@ -297,7 +296,7 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
                   type="button"
                   aria-expanded={mobileSub === link.name}
                   onClick={() => setMobileSub(mobileSub === link.name ? null : link.name)}
-                  className={`flex w-full items-center justify-between px-space-md py-3 text-left ${linkCls(active === link.href)} text-[17px]`}
+                  className={`flex w-full items-center justify-between px-space-md py-3 text-left ${mobileCls(active === link.href)}`}
                 >
                   {link.name}
                   <Icon
@@ -317,7 +316,7 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
                         <Link
                           href={child.href}
                           onClick={() => setOpen(false)}
-                          className={`ml-space-md block border-l px-space-md py-2.5 text-[15px] transition-colors ${
+                          className={`ml-space-md block border-l px-space-md py-2.5 text-[16px] transition-colors ${
                             pathname === child.href
                               ? "border-primary-container text-primary-container"
                               : "border-white/10 text-on-surface-variant hover:text-primary-container"
@@ -335,7 +334,7 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
                 key={link.name}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`px-space-md py-3 ${linkCls(active === link.href)} text-[17px]`}
+                className={`px-space-md py-3 ${mobileCls(active === link.href)}`}
               >
                 {link.name}
               </Link>
@@ -345,15 +344,15 @@ export default function Header({ navLinks = defaultLinks, className = "" }: Part
             <Link
               href="/live"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-primary-container py-3 text-[16px] font-bold text-white"
+              className="inline-flex h-12 items-center justify-center gap-2.5 rounded-full border border-white/20 text-[15px] text-white"
             >
-              Watch Live
               <PlayTile />
+              Watch live
             </Link>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center rounded-lg bg-primary-container py-3 text-[16px] font-semibold text-on-primary shadow-glow"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-primary-container text-[15px] font-medium text-on-primary"
             >
               Connect
             </Link>
